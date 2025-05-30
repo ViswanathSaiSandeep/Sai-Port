@@ -190,6 +190,9 @@ span{
     }
 }
 @media(max-width: 768px){
+    .summary{
+        width: 300px;
+    }
     .main{
         margin-top: 50px;
         flex-direction: column;
