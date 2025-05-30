@@ -5,6 +5,9 @@ body{
     height: 100%;
     background: linear-gradient(to right, white, rgb(133, 216, 151));
 }
+html{
+    scroll-behavior: smooth;
+}
 .nav-container{
     align-items: center;
     display: flex;
@@ -79,7 +82,7 @@ span{
     text-align: center;
 }
 .intro{
-    color: rgb(220, 246, 215);
+    color: rgb(247, 255, 245);
     font-size: larger;
     font-weight: bold;
     text-shadow: 1px 1px 15px green;
@@ -98,13 +101,14 @@ span{
     cursor: pointer;
     width: 200px;
     margin: auto;
+    transition: all 0.3s ease;
 }
 .contact-card{
     text-align: center;
     margin-top: 25px;
 }
 .contdisp{
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
     margin-bottom: 10px;
     color: green;
@@ -116,7 +120,7 @@ span{
     gap: 30px;
 }
 .icon{
-    font-size: 40px;
+    font-size: 30px;
     cursor: pointer;
     color: darkgreen;
     transition: all 0.3s ease;
@@ -128,6 +132,40 @@ span{
     border-radius: 30px;
 }
 
+.scroll{
+    padding: 15px;
+    text-align: center;
+    font-size: large;
+    background-color: darkgreen;
+    color: white;
+    width: 150px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.scroll:hover{
+    background-color: rgb(0, 51, 0);
+    padding: 18px;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.aboutdisp{
+    margin-top: 50px;
+}
+.summary{
+    padding: 30px;
+    background-color: rgb(170, 238, 191);
+    border-radius: 15px;
+    width: 400px;
+    font-size: large;
+}
 
 @media(max-width: 768px){
     .nav-item{
@@ -152,9 +190,6 @@ span{
     }
 }
 @media(max-width: 768px){
-    body{
-        text-align: center;
-    }
     .main{
         margin-top: 50px;
         flex-direction: column;
