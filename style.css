@@ -201,4 +201,7 @@ span{
     .logo{
         width: 200px;
     }
+    .name{
+        font-size: x-large;
+    }
 }
