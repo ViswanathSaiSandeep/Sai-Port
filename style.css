@@ -3,7 +3,7 @@ body{
     margin: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, white, rgb(133, 216, 151));
+    background: linear-gradient(to right, rgb(184, 213, 185), rgb(133, 216, 151));
 }
 html{
     scroll-behavior: smooth;
@@ -82,10 +82,10 @@ span{
     text-align: center;
 }
 .intro{
-    color: rgb(247, 255, 245);
+    color: rgb(255, 255, 255);
     font-size: larger;
     font-weight: bold;
-    text-shadow: 1px 1px 15px green;
+    text-shadow: 1px 1px 15px rgb(9, 77, 9);
 }
 .skill-card{
     display: flex;
@@ -150,23 +150,45 @@ span{
     padding: 18px;
 }
 .about{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    grid-template-areas: "education";
 }
 .aboutdisp{
+    text-align: center;
     margin-top: 50px;
-}
-.summary{
-    padding: 30px;
-    background-color: rgb(170, 238, 191);
-    border-radius: 15px;
-    width: 400px;
-    font-size: large;
+    color: rgb(27, 90, 46);
 }
 
+.card{
+    background-color: rgb(65, 199, 65);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+.Score{
+    background-color: darkgreen;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: rgb(182, 232, 182);
+    transition: all 0.3s ease;
+}
+.Score:hover{
+    padding: 8px;
+    border-radius: 10px;
+}
+.edu{
+    background-color: lightgreen;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.edu-journey{
+    grid-area: education;
+}
 @media(max-width: 768px){
     .nav-item{
         flex-direction: column;
@@ -190,9 +212,6 @@ span{
     }
 }
 @media(max-width: 768px){
-    .summary{
-        width: 300px;
-    }
     .main{
         margin-top: 50px;
         flex-direction: column;
