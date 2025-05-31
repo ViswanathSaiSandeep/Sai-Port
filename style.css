@@ -151,7 +151,8 @@ span{
 }
 .about{
     display: grid;
-    grid-template-areas: "intro education";
+    grid-template-areas: "intro education"
+                        "other other";
     column-gap: 20px;
     row-gap:20px ;
     justify-content: center;
@@ -168,6 +169,7 @@ span{
     padding: 20px;
     border-radius: 15px;
     text-align: center;
+    width: 310px;
 }
 .Score{
     background-color: darkgreen;
@@ -189,13 +191,22 @@ span{
     margin-bottom: 15px;
 }
 .edu-journey{
+    height: 645px;
     grid-area: education;
 }
 .about-journey{
     grid-area: intro;
 }
 .other-journey{
+    width: 680px;
     grid-area: other;
+}
+.option{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 @media(max-width: 768px){
     .nav-item{
@@ -234,7 +245,10 @@ span{
     .about{
         text-align: center;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
+    }
+    .other-journey{
+        width: 310px;
     }
 }
