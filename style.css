@@ -151,9 +151,10 @@ span{
 }
 .about{
     display: grid;
+    grid-template-areas: "education skill";
+    column-gap: 20px;
     justify-content: center;
-    align-items: center;
-    grid-template-areas: "education";
+    align-items: start;
 }
 .aboutdisp{
     text-align: center;
@@ -189,6 +190,9 @@ span{
 .edu-journey{
     grid-area: education;
 }
+.skill-journey{
+    grid-area: skill;
+}
 @media(max-width: 768px){
     .nav-item{
         flex-direction: column;
@@ -223,4 +227,11 @@ span{
     .name{
         font-size: x-large;
     }
+    .about{
+    display: grid;
+    grid-template-areas: "education" "skill";
+    row-gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
 }
