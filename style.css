@@ -345,8 +345,9 @@ span{
     border-radius: 10px;
 }
 .service-disp{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas: "program frontend uiser projectser";
+    gap: 25px;
     justify-content: center;
     align-items: center;
 }
@@ -355,8 +356,33 @@ span{
     padding: 15px;
     border-radius: 15px;
     text-align: center;
+    width: 280px;
+    height: 220px;
+    box-shadow: 1px 1px 15px 1px darkgreen;
+    line-height: 20px;
+    transition: transform 0.3s ease;
 }
-
+.ser-card:hover{
+    transform: scale(1.05);
+}
+program-ser{
+    grid-area: program;
+}
+frontend-ser{
+    grid-area: frontend;
+}
+ui-ser{
+    grid-area: uiser;
+}
+project-ser{
+    grid-area: projectser;
+}
+.describe{
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(0, 48, 0);
+}
 @media(max-width: 768px){
     .nav-item{
         flex-direction: column;
@@ -421,5 +447,24 @@ span{
         gap: 20px;
         justify-content: center;
         align-items: center;
+    }
+    .service-disp{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .ser-card{
+        width: 310px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1350px){
+    .service-disp{
+        display: grid;
+        grid-template-areas: "program frontend" "uiser projectser";
+        gap: 20px;
+    }
+    .ser-card{
+        width: 310px;
     }
 }
