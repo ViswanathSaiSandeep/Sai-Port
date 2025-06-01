@@ -285,13 +285,14 @@ span{
     background-color: lightgreen;
     padding: 15px;
     border-radius: 15px;
-    color: rgb(0, 44, 0);
+    color: rgb(0, 53, 0);
     text-align: justify;
 }
 .project-features{
     background-color: rgb(69, 166, 69);
     border-radius: 15px;
     grid-area: features;
+    padding-top: 10px;
 }
 .project-feat{
     display: grid;
