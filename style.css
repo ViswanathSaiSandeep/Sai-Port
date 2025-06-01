@@ -344,6 +344,19 @@ span{
     padding: 13px;
     border-radius: 10px;
 }
+.service-disp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ser-card{
+    background-color: rgb(69, 166, 69);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
 @media(max-width: 768px){
     .nav-item{
         flex-direction: column;
