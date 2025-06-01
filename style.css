@@ -383,6 +383,87 @@ project-ser{
     border-radius: 10px;
     color: rgb(0, 48, 0);
 }
+.contact-page{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(69, 166, 69);
+    padding: 40px;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.logo1{
+    border: solid darkgreen 5px;
+    border-radius: 300px;
+    width: 150px;
+}
+.profile-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contdisp1{
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(0, 40, 0);
+    background-color: rgb(184, 229, 181);
+    text-align: center;
+    padding: 8px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.conticon1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.nameico{
+    text-decoration: none;
+    background-color: darkgreen;
+    color: lightgreen;
+    font-size: x-large;
+    padding: 10px;
+    width: 175px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.nameico:hover{
+    background-color: palegreen;
+    color: darkgreen;
+    padding: 15px;
+    border-radius: 10px;
+}
+.icon1{
+    background-color: palegreen;
+    color: darkgreen;
+    padding: 5px;
+    border-radius: 15px;
+}
+.icon1:hover{
+    background-color: darkgreen;
+    color: palegreen;
+    padding: 7px;
+    border-radius: 10px;
+}
+.name1{
+    font-weight: bold;
+    font-size: larger;
+    color: rgb(0, 46, 0);
+    text-shadow: 1px 1px 15px palegreen;
+}
+.contactfor{
+    background-color: rgb(5, 39, 0);
+    color: rgb(166, 229, 166);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: bold;
+}
 @media(max-width: 768px){
     .nav-item{
         flex-direction: column;
@@ -455,6 +536,10 @@ project-ser{
     }
     .ser-card{
         width: 310px;
+    }
+    .contact-page{
+        display: flex;
+        flex-direction: column;
     }
 }
 
