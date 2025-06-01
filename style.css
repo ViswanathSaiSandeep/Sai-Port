@@ -202,6 +202,7 @@ span{
     grid-area: education;
 }
 .about-journey{
+    height: 646px;
     grid-area: intro;
 }
 .other-journey{
@@ -237,10 +238,11 @@ span{
     text-align: center;
 }
 .skill-journey{
-    height: 340px;
+    height: 350px;
     grid-area: codeskill;
 }
 .tech-journey{
+    height: 350px;
     grid-area: techskill;
 }
 .devtools-journey{
