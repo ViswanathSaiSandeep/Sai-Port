@@ -215,6 +215,39 @@ span{
     align-items: center;
     gap: 5px;
 }
+.skill-page{
+    display: grid;
+    grid-template-areas: "codeskill techskill"
+                         "devtools devtools";
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.card1{
+    text-align: center;
+    background-color: rgb(69, 166, 69);
+    border-radius: 15px;
+    width: 310px;
+    padding: 20px;
+}
+.ski{
+    background-color: lightgreen;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+.skill-journey{
+    height: 340px;
+    grid-area: codeskill;
+}
+.tech-journey{
+    grid-area: techskill;
+}
+.devtools-journey{
+    width: 680px;
+    grid-area: devtools;
+}
+
 @media(max-width: 768px){
     .nav-item{
         flex-direction: column;
@@ -256,6 +289,13 @@ span{
         align-items: center;
     }
     .other-journey{
+        width: 310px;
+    }
+    .skill-page{
+        display: flex;
+        flex-direction: column;
+    }
+    .devtools-journey{
         width: 310px;
     }
 }
