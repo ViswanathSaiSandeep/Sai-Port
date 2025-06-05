@@ -463,6 +463,7 @@ project-ser{
     border-radius: 10px;
     font-size: medium;
     font-weight: bold;
+    text-align: center;
 }
 @media(max-width: 768px){
     .nav-item{
