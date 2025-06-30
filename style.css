@@ -70,8 +70,8 @@ span{
 }
 .logo{
     border: solid darkgreen 5px;
-    border-radius: 300px;
-    width: 300px;
+    border-radius: 50%;
+    width: 27=px;
 }
 .name{
     color: darkgreen;
