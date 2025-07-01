@@ -554,9 +554,24 @@ project-ser{
         z-index: 10000;
     }
     
-    /* Hamburger menu animation */
     .menu.active {
-        transform: rotate(90deg);
+    transform: rotate(90deg);
+    }
+    
+    .menu .fa-bars {
+    display: inline-block;
+    }
+
+    .menu .fa-xmark {
+        display: none;
+    }
+    
+    .menu.active .fa-bars {
+        display: none;
+    }
+
+    .menu.active .fa-xmark {
+        display: inline-block;
     }
     
     /* Add overlay for better UX */
