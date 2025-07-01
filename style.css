@@ -260,6 +260,25 @@ span{
     justify-content: center;
     gap: 20px;
 }
+.view{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: lightgreen;
+    border: none;
+    font-family: "Product Sans";
+    font-size: medium;
+    font-weight: bold;
+    color: darkgreen;
+    cursor: pointer;
+    height: 35px;
+    transition: all 0.3s ease;
+}
+.view:hover{
+    background-color: darkgreen;
+    color: lightgreen;
+    padding: 8px;
+    border-radius: 15px;
+}
 .project-ui{
     display: flex;
     flex-direction: column;
