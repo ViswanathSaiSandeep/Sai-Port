@@ -7,15 +7,19 @@
 body{
     font-family: "Product Sans";
     margin: 0;
-    width: 100%;
-    height: 100%;
     background: linear-gradient(to right, rgb(184, 213, 185), rgb(133, 216, 151));
+    padding-top: 100px;
 }
 html{
     scroll-behavior: smooth;
 }
 .nav-container{
-    margin: 8px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    z-index: 1000;
+    margin-bottom: 50px;
     align-items: center;
     display: flex;
     justify-content: space-around;
@@ -24,6 +28,7 @@ html{
     padding: 20px 30px;
     border-radius: 25px;
     box-shadow: 0 4px 20px rgba(0, 40, 7, 0.5);
+    transition: all 0.3s ease;
 }
 .nav-item{
     display: flex;
@@ -67,7 +72,7 @@ span{
 
 .main{
     display: flex;
-    margin-top: 100px;
+    margin-top: 85px;
     gap: 50px;
     justify-content: center;
     align-items: center;
@@ -500,17 +505,77 @@ project-ser{
         top: 80px;
         right: 10px;
         padding: 15px;
-        display: none;
         border-radius: 20px;
         z-index: 9999;
+        
+        /* Animation properties */
+        transform: translateX(100%) scale(0.8);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transform-origin: top right;
+        
+        /* Add backdrop blur effect */
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
+    
     .nav-item.show{
-        display: flex;
-
+        transform: translateX(0) scale(1);
+        opacity: 1;
+        visibility: visible;
     }
+    
+    /* Individual menu item animations */
+    .nav-item .tab {
+        transform: translateX(20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-item.show .tab {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+    /* Staggered animation for menu items */
+    .nav-item.show .tab:nth-child(1) { transition-delay: 0.1s; }
+    .nav-item.show .tab:nth-child(2) { transition-delay: 0.15s; }
+    .nav-item.show .tab:nth-child(3) { transition-delay: 0.2s; }
+    .nav-item.show .tab:nth-child(4) { transition-delay: 0.25s; }
+    .nav-item.show .tab:nth-child(5) { transition-delay: 0.3s; }
+    .nav-item.show .tab:nth-child(6) { transition-delay: 0.35s; }
+    
     .menu{
         margin-left: auto;
         display: flex;
+        transition: transform 0.3s ease;
+        position: relative;
+        z-index: 10000;
+    }
+    
+    /* Hamburger menu animation */
+    .menu.active {
+        transform: rotate(90deg);
+    }
+    
+    /* Add overlay for better UX */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-overlay.show {
+        opacity: 1;
+        visibility: visible;
     }
 }
 @media(max-width: 768px){
