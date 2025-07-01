@@ -13,6 +13,13 @@ body{
 html{
     scroll-behavior: smooth;
 }
+#about,
+#skills,
+#projects,
+#services,
+#contact {
+  scroll-margin-top: 100px; /* Height of fixed navbar + extra spacing */
+}
 .nav-container{
     position: fixed;
     top: 5px;
