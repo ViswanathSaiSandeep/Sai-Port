@@ -139,18 +139,16 @@ html{
     width: 75px;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-.goback:hover{
-    padding: 10px;
-    border-radius: 15px;
-    background-color: rgb(69, 166, 69);
-    color: darkgreen;
-}
-a{
     text-decoration: none;
     color: rgb(182, 232, 182);
     font-family: "Product Sans";
     font-size: large;
+}
+.goback:hover{
+    padding: 10px;
+    border-radius: 15px;
+    background-color: lightgreen;
+    color: darkgreen;
 }
 @media(max-width: 768px){
     .project-section{
