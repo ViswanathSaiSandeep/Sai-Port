@@ -1,8 +1,9 @@
 *{
     user-select: none;
-    -webkit-user-select: none; /* For Safari */
+    -webkit-user-select: none;
     -ms-user-select: none;
-    -moz-user-select: none; 
+    -moz-user-select: none;
+    -webkit-tap-highlight-color: transparent; 
 }
 body{
     font-family: "Product Sans";

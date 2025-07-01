@@ -42,6 +42,7 @@ html{
     color: white;
     font-weight: bold;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 .tab:hover{
     background-color: white;
@@ -68,6 +69,7 @@ span{
     font-size: larger;
     font-weight: bold;
     display: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .main{
@@ -557,7 +559,7 @@ project-ser{
     .menu.active {
     transform: rotate(90deg);
     }
-    
+
     .menu .fa-bars {
     display: inline-block;
     }
