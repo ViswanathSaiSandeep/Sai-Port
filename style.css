@@ -3,6 +3,7 @@
     -webkit-user-select: none; /* For Safari */
     -ms-user-select: none;
     -moz-user-select: none; 
+    -webkit-tap-highlight-color: transparent; 
 }
 body{
     font-family: "Product Sans";
@@ -272,10 +273,12 @@ span{
     width: 310px;
     border-radius: 15px;
 }
+.uiss1{
+    width: 310px;
+    height: 300px;
+}
 .project-section{
-    display: grid;
-    grid-template-areas: "picture description"
-                         "features features";
+    display: flex;
     justify-content: center;
     gap: 20px;
 }
