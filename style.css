@@ -19,6 +19,7 @@ html{
 #skills,
 #projects,
 #services,
+#work,
 #contact {
   scroll-margin-top: 110px; /* Height of fixed navbar + extra spacing */
 }
@@ -91,7 +92,7 @@ span{
 .logo{
     border: solid darkgreen 5px;
     border-radius: 50%;
-    width: 27=px;
+    width: 270px;
 }
 .name{
     color: darkgreen;
@@ -276,11 +277,19 @@ span{
 .uiss1{
     width: 310px;
     height: 300px;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 .project-section{
     display: flex;
     justify-content: center;
     gap: 20px;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 .view{
     padding: 5px;
@@ -661,6 +670,77 @@ project-ser{
         display: flex;
         flex-direction: column;
     }
+}
+
+@media (min-width: 768px) and (max-width: 1350px){
+    .service-disp{
+        display: grid;
+        grid-template-areas: "program frontend" "uiser projectser";
+        gap: 20px;
+    }
+    .ser-card{
+        width: 310px;
+    }
+}
+
+/* Center the Experience section card */
+.work {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.work-card {
+  margin: 0 auto; /* Fallback centering */
+}
+
+/* =====================
+   Motion-safe animations
+   ===================== */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 600ms ease, transform 600ms ease;
+    will-change: opacity, transform;
+  }
+  .reveal.show {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Performance: avoid offscreen rendering cost for large sections */
+.about,
+.skill-page,
+.project-section,
+.contact-page,
+.work {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px; /* reserve space for quicker paint */
+}
+
+/* Keep Services section fully rendered to avoid clipping shadows/scale */
+.service-disp {
+  content-visibility: visible;
+  contain-intrinsic-size: auto;
+  overflow: visible;
+}
+
+/* Ensure hovered service cards appear above neighbors */
+.ser-card:hover {
+  z-index: 1;
 }
 
 @media (min-width: 768px) and (max-width: 1350px){

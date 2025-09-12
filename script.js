@@ -95,4 +95,57 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // -------- Performance: lazy-load non-critical images --------
+    // Eagerly keep only the main profile image if present
+    const allImages = Array.from(document.querySelectorAll('img'));
+    allImages.forEach(img => {
+        const isHero = img.classList.contains('logo');
+        if (!isHero) {
+            if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+            img.setAttribute('decoding', 'async');
+            // Modern hint to browser for low priority assets
+            if (!img.hasAttribute('fetchpriority')) img.setAttribute('fetchpriority', 'low');
+        } else {
+            // Ensure the hero image is prioritized
+            img.setAttribute('fetchpriority', 'high');
+            img.setAttribute('decoding', 'async');
+        }
+    });
+
+    // -------- Scroll reveal animations (motion-safe) --------
+    const revealTargets = document.querySelectorAll([
+        '.card',
+        '.card1',
+        '.project-ui',
+        '.contact-page',
+        '.about',
+        '.skill-page',
+        '.project-section',
+        '.work-card',
+        '.scroll',
+        '.contact-card'
+    ].join(','));
+
+    revealTargets.forEach(el => el.classList.add('reveal'));
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -5% 0px'
+        });
+
+        revealTargets.forEach(el => io.observe(el));
+    } else {
+        // If reduced motion or no IO support, show everything immediately
+        revealTargets.forEach(el => el.classList.add('show'));
+    }
 });
