@@ -5,6 +5,14 @@
     -moz-user-select: none; 
     -webkit-tap-highlight-color: transparent; 
 }
+
+/* Mobile-specific tuning for animations */
+@media (prefers-reduced-motion: no-preference) and (max-width: 768px) {
+  .reveal {
+    transform: translateY(10px);
+    transition-duration: 400ms;
+  }
+}
 body{
     font-family: "Product Sans";
     margin: 0;
@@ -55,6 +63,13 @@ html{
     -webkit-tap-highlight-color: transparent;
 }
 .tab:hover{
+    background-color: white;
+    color: darkgreen;
+    border-radius: 5px;
+    padding: 7px;
+}
+/* Current section highlight */
+.tab.active{
     background-color: white;
     color: darkgreen;
     border-radius: 5px;

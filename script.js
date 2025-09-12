@@ -148,4 +148,71 @@ document.addEventListener("DOMContentLoaded", function () {
         // If reduced motion or no IO support, show everything immediately
         revealTargets.forEach(el => el.classList.add('show'));
     }
+
+    // -------- Stagger animation flow for grouped items --------
+    function applyStagger(selector, stepMs = 80) {
+        const items = document.querySelectorAll(selector);
+        items.forEach((el, idx) => {
+            const base = getComputedStyle(el).transitionDelay || '0ms';
+            // Append stagger to any existing delay
+            el.style.transitionDelay = `calc(${base} + ${idx * stepMs}ms)`;
+        });
+    }
+    // Apply stagger to groups that use reveal (avoid .ser-card to keep hover intact)
+    applyStagger('.about .card');
+    applyStagger('.skill-page .card1');
+    applyStagger('.project-section .project-ui');
+    applyStagger('.work .work-card');
+
+    // -------- Active nav highlight by section in view --------
+    const sectionIds = ['home','about','skills','work','projects','services','contact'];
+    const linkMap = new Map();
+    sectionIds.forEach(id => {
+        const link = document.querySelector(`.nav-item a[href="#${id}"]`);
+        if (link) linkMap.set(id, link);
+    });
+
+    function setActive(id) {
+        linkMap.forEach(el => el.classList.remove('active'));
+        const target = linkMap.get(id);
+        if (target) target.classList.add('active');
+    }
+
+    // Set initial active
+    setActive(location.hash ? location.hash.slice(1) : 'home');
+
+    if ('IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            // Choose the most visible intersecting section
+            let topEntry = null;
+            for (const e of entries) {
+                if (e.isIntersecting) {
+                    if (!topEntry || e.intersectionRatio > topEntry.intersectionRatio) topEntry = e;
+                }
+            }
+            if (topEntry) {
+                const id = topEntry.target.getAttribute('id');
+                if (id) setActive(id);
+            }
+        }, {
+            threshold: [0.25, 0.5, 0.75],
+            rootMargin: '-15% 0px -50% 0px'
+        });
+
+        sectionIds.forEach(id => {
+            const sec = document.getElementById(id);
+            if (sec) sectionObserver.observe(sec);
+        });
+    } else {
+        // Scroll fallback
+        window.addEventListener('scroll', () => {
+            let current = 'home';
+            const y = window.scrollY + 140;
+            sectionIds.forEach(id => {
+                const sec = document.getElementById(id);
+                if (sec && sec.offsetTop <= y) current = id;
+            });
+            setActive(current);
+        });
+    }
 });
