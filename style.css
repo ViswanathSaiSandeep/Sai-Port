@@ -871,7 +871,12 @@ project-ser{
     .contact-form label{
         font-size: 14px;
     }
-    .contact-form .send-btn{ max-width: 100%; }
+    .contact-form .send-btn{ 
+        max-width: 100%;
+        padding: 12px 16px; /* larger tap target */
+        font-size: 16px;
+        min-width: 120px;
+    }
     .contact-form .send-btn .btn-text{ font-size: 14px; }
 
     .conticon1{ gap: 12px; }

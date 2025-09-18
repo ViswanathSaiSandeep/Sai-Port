@@ -352,7 +352,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         const cs = getComputedStyle(container);
                         const padX = parseFloat(cs.paddingLeft || '0') + parseFloat(cs.paddingRight || '0');
                         const maxW = Math.max(0, Math.floor(container.clientWidth - padX - 8));
-                        targetWidth = Math.min(targetWidth, maxW);
+                        // Ensure there is a visible growth where possible
+                        const minGrowth = 24; // px
+                        targetWidth = Math.min(Math.max(targetWidth, prevWidth + minGrowth), maxW);
                     }
                     sendBtn.style.width = prevWidth + 'px';
                     requestAnimationFrame(() => { sendBtn.style.width = targetWidth + 'px'; });
@@ -381,7 +383,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         const cs = getComputedStyle(container);
                         const padX = parseFloat(cs.paddingLeft || '0') + parseFloat(cs.paddingRight || '0');
                         const maxW = Math.max(0, Math.floor(container.clientWidth - padX - 8));
-                        targetWidth = Math.min(targetWidth, maxW);
+                        const minGrowth = 24; // ensure visible growth on mobile
+                        targetWidth = Math.min(Math.max(targetWidth, prevWidth + minGrowth), maxW);
                     }
                     sendBtn.style.width = prevWidth + 'px';
                     requestAnimationFrame(() => { sendBtn.style.width = targetWidth + 'px'; });
@@ -404,7 +407,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     const cs = getComputedStyle(container);
                     const padX = parseFloat(cs.paddingLeft || '0') + parseFloat(cs.paddingRight || '0');
                     const maxW = Math.max(0, Math.floor(container.clientWidth - padX - 8));
-                    targetWidth = Math.min(targetWidth, maxW);
+                    const minGrowth = 24;
+                    targetWidth = Math.min(Math.max(targetWidth, prevWidth + minGrowth), maxW);
                 }
                 sendBtn.style.width = prevWidth + 'px';
                 requestAnimationFrame(() => { sendBtn.style.width = targetWidth + 'px'; });
