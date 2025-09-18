@@ -3,13 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai's Portfolio</title>
+    <title>VISWANATH SAI SANDEEP Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <!-- Performance: preconnect to critical origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- SEO: Meta description and keywords -->
+    <meta name="description" content="Portfolio of Viswanath Sai Sandeep – Programmer, Web Developer, and UI/UX Designer. Explore projects, skills, services, and contact for internships or collaborations.">
+    <meta name="keywords" content="Sai's Portfolio, Sandeep Portfolio, Sandeep, Viswanath Sai Sandeep, Programmer, Web Developer, UI/UX Designer, Projects, Skills, Services, Contact">
+    <meta name="author" content="Viswanath Sai Sandeep">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#006400">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Viswanath Sai Sandeep – Portfolio">
+    <meta property="og:description" content="Programmer • Web Developer • UI/UX Designer. Check out my work and get in touch.">
+    <meta property="og:image" content="https://vsaisandeep.netlify.app/websiteLogo.png">
+    <meta property="og:url" content="https://vsaisandeep.netlify.app/">
+    <!-- Optional: set your live site URL above for best results -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Viswanath Sai Sandeep – Portfolio">
+    <meta name="twitter:description" content="Programmer • Web Developer • UI/UX Designer. Explore projects and contact me.">
+    <meta name="twitter:image" content="https://vsaisandeep.netlify.app/websiteLogo.png">
+    <meta name="twitter:site" content="@SaiSandeep55769">
+    <!-- Optional: add your Twitter handle in twitter:site -->
+
+    <!-- Canonical: update href when deployed -->
+    <link rel="canonical" href="https://vsaisandeep.netlify.app/">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Viswanath Sai Sandeep",
+      "alternateName": ["Sai Sandeep", "Sandeep"],
+      "jobTitle": ["Programmer", "Web Developer", "UI/UX Designer"],
+      "image": "profile.jpg",
+      "url": "https://vsaisandeep.netlify.app/",
+      "sameAs": [
+        "https://github.com/ViswanathSaiSandeep",
+        "https://www.linkedin.com/in/viswanath-sai-sandeep/"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD: WebSite entity -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Viswanath Sai Sandeep – Portfolio",
+      "url": "https://vsaisandeep.netlify.app/",
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.google.com/search?q=site%3Avsaisandeep.netlify.app%20{search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Product Sans&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="websiteLogo.png">
@@ -272,6 +331,28 @@
             <img class="logo1" src="profile.jpg" alt="V. Sai Sandeep">
             <p class="name1">VISWANATH SAI SANDEEP</p>
             <p class="contactfor">For Internships, projects & part time jobs</p>
+        </div>
+        
+        <!-- Middle: Contact Form -->
+        <div class="contact-form">
+            <form action="https://formspree.io/f/myzdqqgq" method="POST" id="contactForm" novalidate>
+                <h3>Send a Message</h3>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" aria-describedby="nameHint" required>
+                <div class="field-hint" id="nameHint"></div>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" aria-describedby="emailHint" required>
+                <div class="field-hint" id="emailHint"></div>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" maxlength="500" placeholder="Write your message here..." aria-describedby="messageHint messageCounter" required></textarea>
+                <div class="field-hint" id="messageHint"></div>
+                <div class="char-counter" id="messageCounter">0/500</div>
+
+                <input type="hidden" name="_subject" value="New message from Sai's Portfolio" />
+                <button type="submit" class="send-btn" id="sendBtn" disabled><i class="fa-solid fa-paper-plane"></i>  <span class="btn-text">Send</span></button>
+            </form>
         </div>
 
         <div class="contact-opt">

@@ -457,6 +457,173 @@ project-ser{
     border-radius: 15px;
     margin-left: 10px;
     margin-right: 10px;
+    gap: 20px;
+}
+/* Middle column: Contact form */
+.contact-form{
+    background-color: lightgreen;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 20px rgba(0, 40, 7, 0.2);
+}
+.contact-form .send-btn{ max-width: 100%; }
+.contact-form h3{
+    margin: 0 0 12px 0;
+    color: rgb(0, 40, 0);
+    text-align: center;
+}
+.contact-form label{
+    display: block;
+    font-weight: bold;
+    color: rgb(0, 53, 0);
+    margin: 10px 0 6px 2px;
+}
+.field-hint{
+    min-height: 16px;
+    font-size: 12px;
+    color: rgb(0, 53, 0);
+    margin: 4px 2px 0 2px;
+    opacity: 0.75;
+}
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid darkgreen;
+    background: rgb(207, 231, 207);
+    color: #003300;
+    font-family: "Product Sans";
+    outline: none;
+    box-sizing: border-box;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+    box-shadow: 0 0 0 3px rgba(0, 100, 0, 0.15);
+}
+.contact-form input:invalid,
+.contact-form textarea:invalid{
+    border-color: rgb(0, 92, 0);
+}
+.contact-form input.valid,
+.contact-form textarea.valid{
+    border-color: darkgreen;
+}
+.contact-form input.invalid,
+.contact-form textarea.invalid{
+    border-color: rgb(0, 92, 0);
+}
+.contact-form textarea{
+    resize: vertical;
+    min-height: 120px;
+}
+.send-btn{
+    /* Compact, centered button */
+    display: flex; /* block-level flex container for internal layout */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 14px auto 0; /* center horizontally */
+    padding: 8px 12px;
+    min-width: 88px;
+    border-radius: 20px;
+    background-color: darkgreen;
+    color: lightgreen;
+    border: none;
+    font-family: "Product Sans";
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, width 0.3s ease;
+    position: relative;
+    overflow: hidden; /* keep the icon within bounds while sliding */
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+.send-btn i{ transition: transform 0.25s ease, opacity 0.25s ease; will-change: transform, opacity; }
+.send-btn .btn-text{ transition: opacity 0.25s ease; white-space: nowrap; will-change: opacity; }
+/* Sending state: hide text and fly the plane */
+.send-btn.is-sending .btn-text{ opacity: 0; }
+.send-btn.is-sending i{ animation: planeSlide var(--plane-duration, 0.9s) ease forwards; }
+.send-btn:hover{
+    background-color: #003300;
+    color: #c8efc8;
+}
+.send-btn.btn-sending{
+    box-shadow: 0 0 0 0 rgba(0, 64, 0, 0.4);
+    animation: pulseShadow 1.2s ease-out infinite;
+}
+.send-btn.btn-sending .fa-paper-plane{ animation: planeFly 1s ease-in-out infinite; }
+.send-btn.btn-sent{
+    box-shadow: 0 0 0 0 rgba(0, 64, 0, 0.0);
+    animation: none;
+}
+.send-btn.btn-sent .fa-check{ animation: checkPop 0.35s ease-out forwards; }
+.send-btn.btn-error{
+    box-shadow: 0 0 0 3px rgba(0, 64, 0, 0.15);
+}
+.send-btn.btn-error .fa-triangle-exclamation{ animation: subtleShake 0.4s ease-in-out 1; }
+
+@keyframes pulseShadow {
+    0% { box-shadow: 0 0 0 0 rgba(0, 64, 0, 0.35); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 64, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 64, 0, 0); }
+}
+@keyframes planeFly {
+    0% { transform: translate3d(0,0,0) rotate(0deg); }
+    50% { transform: translate3d(6px,0,0) rotate(10deg); }
+    100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
+/* New: icon slides from left to right across available space */
+@keyframes planeSlide {
+    0% { transform: translate3d(0,0,0); }
+    100% { transform: translate3d(var(--plane-travel, 28px), 0, 0); }
+}
+@keyframes checkPop {
+    0% { transform: scale(0.6); opacity: 0.6; }
+    70% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+@keyframes subtleShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(2px); }
+    50% { transform: translateX(-2px); }
+    75% { transform: translateX(1px); }
+}
+.send-btn:disabled{
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+.form-note{
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgb(0, 53, 0);
+    text-align: center;
+}
+/* Inline submission status */
+.form-status{
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.char-counter{
+    margin-top: 6px;
+    font-size: 12px;
+    color: rgb(0, 53, 0);
+    text-align: right;
+}
+.form-status.status-ok{
+    background-color: lightgreen;
+    color: #003300;
+    border: 2px solid darkgreen;
+}
+.form-status.status-error{
+    background-color: rgb(184, 229, 181);
+    color: #003300;
+    border: 2px solid darkgreen;
 }
 .logo1{
     border: solid darkgreen 5px;
@@ -684,6 +851,36 @@ project-ser{
     .contact-page{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 16px;
+    }
+    .contact-form{
+        width: 92%;
+        max-width: 420px;
+        box-shadow: none;
+        margin-top: 12px;
+        margin-bottom: 8px;
+        align-self: center;
+    }
+    .contact-form input,
+    .contact-form textarea{
+        font-size: 16px; /* avoid iOS zoom and improve readability */
+        line-height: 1.35;
+    }
+    .contact-form label{
+        font-size: 14px;
+    }
+    .contact-form .send-btn{ max-width: 100%; }
+    .contact-form .send-btn .btn-text{ font-size: 14px; }
+
+    .conticon1{ gap: 12px; }
+    .nameico{
+        width: 100%;
+        max-width: 400px;
+    }
+    .contactfor{
+        font-size: 14px;
     }
 }
 
