@@ -468,6 +468,12 @@ project-ser{
     max-width: 420px;
     box-shadow: 0 4px 20px rgba(0, 40, 7, 0.2);
 }
+.contact-form .contact-heading{
+    margin: 0 0 10px 0;
+    text-align: center;
+    color: rgb(0, 40, 0);
+    font-weight: 700;
+}
 .contact-form .send-btn{ max-width: 100%; }
 .contact-form h3{
     margin: 0 0 12px 0;
@@ -640,11 +646,11 @@ project-ser{
     font-size: x-large;
     font-weight: bold;
     color: rgb(0, 40, 0);
-    background-color: rgb(184, 229, 181);
     text-align: center;
-    padding: 8px;
-    border-radius: 15px;
-    margin-bottom: 15px;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 10px;
 }
 .conticon1{
     display: flex;
@@ -898,6 +904,25 @@ project-ser{
     .ser-card{
         width: 310px;
     }
+}
+
+/* ============ Desktop: 2-part Contact layout ============ */
+@media (min-width: 992px){
+  .contact-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "left right"
+      "left2 right";
+    align-items: start;
+    column-gap: 28px;
+  }
+  .profile-name{ grid-area: left; }
+  .contact-opt{ grid-area: left2; }
+  .contact-form{ grid-area: right; }
+
+  /* spacing between profile and connect on desktop */
+  .contact-opt{ margin-top: 10px; }
 }
 
 /* Center the Experience section card */
