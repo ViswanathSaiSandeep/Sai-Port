@@ -1,66 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://vsaisandeep.netlify.app/</loc>
     <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
   </url>
 
-  <!-- About Section -->
-  <url>
-    <loc>https://vsaisandeep.netlify.app/#about</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <!-- Skills Section -->
-  <url>
-    <loc>https://vsaisandeep.netlify.app/#skills</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <!-- Experience Section -->
-  <url>
-    <loc>https://vsaisandeep.netlify.app/#work</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <!-- Projects Section -->
-  <url>
-    <loc>https://vsaisandeep.netlify.app/#projects</loc>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <!-- Project Pages -->
   <url>
     <loc>https://vsaisandeep.netlify.app/markai.html</loc>
     <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
   </url>
 
   <url>
     <loc>https://vsaisandeep.netlify.app/pramahatranslate.html</loc>
     <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <!-- Services Section -->
-  <url>
-    <loc>https://vsaisandeep.netlify.app/#services</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <!-- Contact Section -->
-  <url>
-    <loc>https://vsaisandeep.netlify.app/#contact</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
   </url>
 
 </urlset>
