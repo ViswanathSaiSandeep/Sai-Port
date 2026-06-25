@@ -1,430 +1,926 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VISWANATH SAI SANDEEP Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Performance: preconnect to critical origins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viswanath Sai Sandeep — AI Developer · Web Developer · UI/UX Designer</title>
+<meta name="description" content="Portfolio of Viswanath Sai Sandeep — AI Developer, Web Developer, and UI/UX Designer. B.Tech CSE (AI & DS) student building AI-powered tools and elegant interfaces.">
+<meta name="keywords" content="Sai Sandeep, AI Developer, Web Developer, UI/UX Designer, Portfolio, SIMATS, Chennai">
+<meta name="author" content="Viswanath Sai Sandeep">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="canonical" href="https://vsaisandeep.netlify.app">
+<meta property="og:title" content="Viswanath Sai Sandeep — AI Developer · Web Developer · UI/UX Designer">
+<meta property="og:description" content="AI Developer, Web Developer, and UI/UX Designer. Building AI-powered tools and elegant interfaces.">
+<meta property="og:image" content="https://vsaisandeep.netlify.app/profile.jpg">
+<meta property="og:url" content="https://vsaisandeep.netlify.app">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Viswanath Sai Sandeep — Portfolio">
+<meta name="twitter:description" content="AI Developer, Web Developer, and UI/UX Designer. Building AI-powered tools and elegant interfaces.">
+<meta name="twitter:image" content="https://vsaisandeep.netlify.app/profile.jpg">
+<link rel="icon" type="image/png" href="websiteLogo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Viswanath Sai Sandeep",
+  "alternateName": "Sai Sandeep",
+  "url": "https://vsaisandeep.netlify.app",
+  "image": "https://vsaisandeep.netlify.app/profile.jpg",
+  "sameAs": [
+    "https://github.com/ViswanathSaiSandeep",
+    "https://www.linkedin.com/in/viswanath-sai-sandeep/",
+    "https://x.com/SaiSandeep55769",
+    "https://www.instagram.com/urstruly.sai7"
+  ],
+  "jobTitle": ["AI Developer", "Web Developer", "UI/UX Designer"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "PRAMAHASOFT SOLUTIONS"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "SIMATS Engineering"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0a0a0f;--bg-card:rgba(255,255,255,0.03);--bg-card-hover:rgba(255,255,255,0.06);
+--border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.14);
+--text:#e4e4e7;--text-muted:#71717a;--text-dim:#52525b;
+--accent:#7c3aed;--accent-light:#a78bfa;--accent-glow:rgba(124,58,237,0.15);--accent-glow-strong:rgba(124,58,237,0.3);
+--font-body:'Inter',system-ui,-apple-system,sans-serif;
+--font-display:'Space Grotesk','Inter',sans-serif;
+--font-mono:'JetBrains Mono',monospace;
+--container:1200px;--radius:14px;--radius-sm:8px;
+--section-pad:clamp(80px,12vw,140px);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,var(--accent-glow),transparent 70%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;line-height:1.2}
+.section-header{margin-bottom:60px}
+.section-header h2{font-size:clamp(2rem,4vw,2.8rem);display:inline-flex;align-items:center;gap:12px}
+.section-header h2 .badge{font-size:.5em;font-family:var(--font-mono);color:var(--accent);background:var(--accent-glow);padding:4px 10px;border-radius:20px;font-weight:500;letter-spacing:0.05em}
+.section-header .accent-line{display:block;width:48px;height:3px;background:var(--accent);border-radius:4px;margin-top:16px}
+.section-subtitle{color:var(--text-muted);font-size:1.05rem;margin-top:12px;max-width:560px}
 
-    <!-- SEO: Meta description and keywords -->
-    <meta name="description" content="Portfolio of Viswanath Sai Sandeep – Programmer, Web Developer, and UI/UX Designer. Explore projects, skills, services, and contact for internships or collaborations.">
-    <meta name="keywords" content="Sai's Portfolio, Sandeep Portfolio, Sandeep, Viswanath Sai Sandeep, Programmer, Web Developer, UI/UX Designer, Projects, Skills, Services, Contact">
-    <meta name="author" content="Viswanath Sai Sandeep">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#006400">
+/* -------- REVEAL -------- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Viswanath Sai Sandeep – Portfolio">
-    <meta property="og:description" content="Programmer • Web Developer • UI/UX Designer. Check out my work and get in touch.">
-    <meta property="og:image" content="https://vsaisandeep.netlify.app/websiteLogo.png">
-    <meta property="og:url" content="https://vsaisandeep.netlify.app/">
-    <!-- Optional: set your live site URL above for best results -->
+/* -------- NAVBAR -------- */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:background .4s ease,padding .4s ease,border-color .4s ease,backdrop-filter .4s ease;background:transparent;border-bottom:1px solid transparent}
+.navbar.scrolled{background:rgba(10,10,15,.75);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border-bottom-color:rgba(255,255,255,0.07);padding:12px 0}
+.navbar .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--accent);letter-spacing:-0.02em}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase;position:relative;transition:color .25s}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);border-radius:2px;transition:width .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a.active::after{width:100%}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:1001}
+.hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(10,10,15,.96);backdrop-filter:blur(24px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:var(--text-muted);transition:color .2s}
+.mobile-menu a:hover{color:var(--text)}
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Viswanath Sai Sandeep – Portfolio">
-    <meta name="twitter:description" content="Programmer • Web Developer • UI/UX Designer. Explore projects and contact me.">
-    <meta name="twitter:image" content="https://vsaisandeep.netlify.app/websiteLogo.png">
-    <meta name="twitter:site" content="@SaiSandeep55769">
-    <!-- Optional: add your Twitter handle in twitter:site -->
+/* -------- HERO -------- */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
+.hero-text .greeting{font-size:clamp(1rem,2vw,1.15rem);color:var(--text-muted);font-weight:400;margin-bottom:8px}
+.hero-text h1{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:16px;text-transform:uppercase;letter-spacing:-0.01em}
+.hero-text h1 .accent-name{background:linear-gradient(135deg,var(--accent),var(--accent-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.typewriter-line{font-family:var(--font-mono);font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--accent-light);margin-bottom:24px;display:flex;align-items:center;gap:2px;min-height:1.8em}
+.typewriter-cursor{display:inline-block;width:2px;height:1.2em;background:var(--accent);animation:blink 1s steps(1) infinite;margin-left:2px;vertical-align:text-bottom}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-bio{color:var(--text-muted);font-size:1rem;line-height:1.8;max-width:500px;margin-bottom:32px}
+.hero-ctas{display:flex;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.9rem;font-weight:600;cursor:pointer;transition:all .25s;border:none;letter-spacing:.01em}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--accent-glow-strong)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border-hover)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn svg,.btn i{width:16px;height:16px}
+.social-row{display:flex;gap:12px}
+.social-icon{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all .25s;font-size:18px}
+.social-icon:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-3px);box-shadow:0 6px 20px var(--accent-glow)}
+.social-icon svg,.social-icon i{width:18px;height:18px}
+/* SVG social icons inside .social-icon */
+.social-icon .social-svg{width:18px;height:18px;fill:currentColor}
+.hero-image-wrap{display:flex;justify-content:center;align-items:center}
+.profile-ring{position:relative;width:clamp(280px,22vw,380px);height:clamp(280px,22vw,380px);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:float 6s ease-in-out infinite}
+.profile-ring::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),var(--accent-light),var(--accent));padding:3px;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.6;animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.profile-ring img{width:calc(100% - 8px);height:calc(100% - 8px);border-radius:50%;object-fit:cover;position:relative;z-index:1}
+.profile-ring::after{content:'';position:absolute;inset:0;border-radius:50%;box-shadow:0 0 60px 10px var(--accent-glow);z-index:0}
+.scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-dim);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;animation:scrollBounce 2s ease-in-out infinite}
+.scroll-indicator i{width:18px;height:18px}
+@keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.hero-cursor-glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);pointer-events:none;opacity:0;transition:opacity .3s;z-index:0}
 
-    <!-- Canonical: update href when deployed -->
-    <link rel="canonical" href="https://vsaisandeep.netlify.app/">
+/* -------- ABOUT -------- */
+#about{padding:var(--section-pad) 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.about-narrative{color:var(--text-muted);font-size:1rem;line-height:1.9;margin-bottom:36px}
+.quick-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
+.fact-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px}
+.fact-item .label{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-bottom:4px}
+.fact-item .value{font-weight:600;font-size:.95rem}
+.interests-strip{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:20px;background:var(--bg-card);border:1px solid var(--border);font-size:.82rem;color:var(--text-muted);transition:all .2s}
+.pill:hover{border-color:var(--accent);color:var(--accent-light)}
+.lang-pills{display:flex;gap:10px;flex-wrap:wrap}
+.lang-pill{padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:600;background:var(--accent-glow);color:var(--accent-light);border:1px solid rgba(124,58,237,.2);letter-spacing:.03em}
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border))}
+.timeline-item{position:relative;margin-bottom:28px}
+.timeline-item::before{content:'';position:absolute;left:-24px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);z-index:1}
+.timeline-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .25s}
+.timeline-card:hover{border-color:var(--border-hover)}
+.timeline-card h4{font-size:1rem;margin-bottom:4px}
+.timeline-card .stream{color:var(--text-muted);font-size:.88rem}
+.timeline-card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:.82rem}
+.timeline-card .score{color:var(--accent-light);font-weight:700}
+.timeline-card .year{color:var(--text-dim)}
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Viswanath Sai Sandeep",
-    "alternateName": [
-        "Sai Sandeep",
-        "V. Sai Sandeep"
-    ],
-    "jobTitle": [
-        "Programmer",
-        "Web Developer",
-        "UI/UX Designer",
-        "CSE Student (AI & DS)"
-    ],
-    "description": "CSE student specializing in AI & DS, Programmer, Web Developer, UI/UX Designer, and creator of multiple tech projects including PRAMAHA Translate and PARIS AI.",
-    "image": "https://vsaisandeep.netlify.app/profile.jpg",
-    "url": "https://vsaisandeep.netlify.app/",
-    "birthDate": "2006-06-17",
-    "gender": "Male",
-    "knowsAbout": [
-        "Python",
-        "Web Development",
-        "Java",
-        "C++",
-        "UI/UX Design",
-        "JavaScript",
-        "Cloud Hosting",
-        "AI Tools",
-        "Software Testing"
-    ],
-    "alumniOf": [
-        {
-        "@type": "EducationalOrganization",
-        "name": "SIMATS Engineering, Chennai",
-        "description": "B.Tech CSE - Artificial Intelligence & Data Science"
-        },
-        {
-        "@type": "EducationalOrganization",
-        "name": "Nucleus Junior College, Nandyal"
-        },
-        {
-        "@type": "EducationalOrganization",
-        "name": "Spring Dale Public School, Tirupati"
-        }
-    ],
-    "sameAs": [
-        "https://github.com/ViswanathSaiSandeep",
-        "https://www.linkedin.com/in/viswanath-sai-sandeep/",
-        "https://www.instagram.com/urstruly.sai7",
-        "https://x.com/SaiSandeep55769"
-    ]
-    }
-    </script>
+/* -------- SKILLS -------- */
+#skills{padding:var(--section-pad) 0}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.skill-group{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;backdrop-filter:blur(12px);display:flex;flex-direction:column}
+.skill-group h3{font-size:1.1rem;display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.skill-group h3 i{color:var(--accent);width:20px;height:20px}
+.skill-bar-wrap{margin-bottom:18px}
+.skill-bar-wrap:last-child{margin-bottom:0}
+.skill-bar-label{display:flex;justify-content:space-between;margin-bottom:6px;font-size:.85rem}
+.skill-bar-label span:last-child{color:var(--text-dim);font-size:.78rem}
+.skill-bar-track{height:6px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+.skill-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-light));border-radius:4px;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.tool-grid{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+.tool-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-sm);background:rgba(255,255,255,.04);border:1px solid var(--border);font-size:.82rem;color:var(--text-muted);transition:all .2s}
+.tool-chip:hover{border-color:var(--accent);color:var(--accent-light)}
+.tool-chip i{width:14px;height:14px}
+.learning-badge{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:20px;background:var(--accent-glow);border:1px solid rgba(124,58,237,.25);color:var(--accent-light);font-size:.85rem;font-weight:500;animation:pulse 2.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-glow)}50%{box-shadow:0 0 0 8px transparent}}
 
+/* -------- EXPERIENCE -------- */
+#experience{padding:var(--section-pad) 0}
+.exp-cards{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.exp-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;backdrop-filter:blur(12px);transition:all .35s;position:relative;overflow:hidden}
+.exp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-light))}
+.exp-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.exp-card-header{display:flex;gap:20px;align-items:center;margin-bottom:20px}
+.exp-avatar{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:#fff;flex-shrink:0;overflow:hidden}
+.exp-avatar.gradient{background:linear-gradient(135deg,var(--accent),var(--accent-light))}
+.exp-avatar img{width:100%;height:100%;object-fit:cover}
+.exp-card-header-text h3{font-size:1.15rem;margin-bottom:2px}
+.exp-card-header-text .role{color:var(--accent-light);font-weight:500;font-size:.9rem}
+.exp-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.exp-badge{padding:5px 14px;border-radius:20px;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.exp-badge.type{background:var(--accent);color:#fff}
+.exp-badge.duration{background:rgba(255,255,255,.06);color:var(--text-muted);border:1px solid var(--border)}
+.exp-badge.domain{background:var(--accent-glow);color:var(--accent-light);border:1px solid rgba(124,58,237,.2)}
+.exp-details{list-style:none;margin-top:8px}
+.exp-details li{position:relative;padding-left:18px;margin-bottom:8px;color:var(--text-muted);font-size:.88rem;line-height:1.6}
+.exp-details li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.exp-divider{height:1px;background:var(--border);margin:16px 0}
+.exp-social-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.exp-social-link{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:500;border:1px solid var(--border);color:var(--text-muted);transition:all .2s}
+.exp-social-link:hover{border-color:var(--accent);color:var(--accent-light)}
+.exp-social-link i,.exp-social-link .social-svg{width:14px;height:14px}
+.exp-social-link .social-svg{fill:currentColor}
 
-    <!-- JSON-LD: WebSite entity -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Viswanath Sai Sandeep – Portfolio",
-      "url": "https://vsaisandeep.netlify.app/",
-      "inLanguage": "en",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.google.com/search?q=site%3Avsaisandeep.netlify.app%20{search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
+/* -------- PROJECTS -------- */
+#projects{padding:var(--section-pad) 0}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .35s;position:relative}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-light));z-index:2}
+.project-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.project-image{position:relative;overflow:hidden;aspect-ratio:16/10}
+.project-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.project-card:hover .project-image img{transform:scale(1.06)}
+.project-overlay{position:absolute;inset:0;background:rgba(10,10,15,.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .35s}
+.project-card:hover .project-overlay{opacity:1}
+.project-overlay .btn{transform:translateY(10px);transition:transform .35s}
+.project-card:hover .project-overlay .btn{transform:translateY(0)}
+.project-info{padding:24px 28px 28px}
+.project-info h3{font-size:1.15rem;margin-bottom:8px}
+.project-info p{color:var(--text-muted);font-size:.9rem;line-height:1.7;margin-bottom:16px}
+.project-tags{display:flex;flex-wrap:wrap;gap:8px}
+.project-tag{padding:4px 12px;border-radius:20px;font-size:.75rem;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text-dim);font-weight:500}
 
-    <link href="https://fonts.googleapis.com/css2?family=Product Sans&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="websiteLogo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+/* -------- SERVICES -------- */
+#services{padding:var(--section-pad) 0}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.service-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;backdrop-filter:blur(12px);transition:all .35s}
+.service-card:hover{border-color:rgba(124,58,237,.35);box-shadow:0 0 30px var(--accent-glow)}
+.service-card .icon-wrap{width:52px;height:52px;border-radius:14px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.service-card .icon-wrap i{color:var(--accent);width:24px;height:24px}
+.service-card h3{font-size:1.1rem;margin-bottom:10px}
+.service-card p{color:var(--text-muted);font-size:.9rem;line-height:1.7;margin-bottom:20px}
+.service-link{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:500;color:var(--accent-light);transition:gap .2s}
+.service-link:hover{gap:10px}
+.service-link i{width:14px;height:14px}
+
+/* -------- CONTACT -------- */
+#contact{padding:var(--section-pad) 0;padding-bottom:60px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-text h3{font-family:var(--font-display);font-size:1.6rem;margin-bottom:16px}
+.contact-text p{color:var(--text-muted);font-size:1rem;line-height:1.8;margin-bottom:28px;max-width:420px}
+.contact-info-items{display:flex;flex-direction:column;gap:16px;margin-bottom:28px}
+.contact-info-item{display:flex;align-items:center;gap:14px}
+.contact-info-item .info-icon{width:44px;height:44px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-info-item .info-icon i{color:var(--accent);width:20px;height:20px}
+.contact-info-item .info-text .info-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);margin-bottom:2px}
+.contact-info-item .info-text .info-value{font-size:.92rem;font-weight:500}
+.contact-info-item .info-text .info-value a{color:var(--accent-light);transition:color .2s}
+.contact-info-item .info-text .info-value a:hover{color:var(--accent)}
+.contact-form{display:flex;flex-direction:column;gap:18px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;backdrop-filter:blur(12px)}
+.contact-form h4{font-size:1.1rem;margin-bottom:4px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:.82rem;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
+.form-group input,.form-group textarea{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px;color:var(--text);font-family:var(--font-body);font-size:.92rem;transition:border-color .25s,background .25s;outline:none}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent);background:rgba(124,58,237,.05)}
+.form-group textarea{min-height:140px;resize:vertical}
+.btn-submit{width:100%;padding:16px;border-radius:var(--radius-sm);background:var(--accent);color:#fff;font-family:var(--font-body);font-size:.95rem;font-weight:600;border:none;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--accent-glow-strong)}
+.btn-submit i{width:18px;height:18px}
+
+/* -------- FOOTER -------- */
+.footer{padding:40px 0;text-align:center;border-top:1px solid var(--border);color:var(--text-dim);font-size:.85rem}
+.footer span{color:var(--accent)}
+
+/* -------- RESPONSIVE -------- */
+@media(max-width:1024px){
+.hero-grid{grid-template-columns:1fr;text-align:center;gap:40px}
+.hero-text{order:2}.hero-image-wrap{order:1}
+.hero-bio{margin-left:auto;margin-right:auto}
+.hero-ctas{justify-content:center}
+.social-row{justify-content:center}
+.about-grid{grid-template-columns:1fr}
+.skills-grid{grid-template-columns:1fr}
+.projects-grid{grid-template-columns:1fr}
+.services-grid{grid-template-columns:1fr}
+.contact-grid{grid-template-columns:1fr}
+.exp-cards{grid-template-columns:1fr}
+.typewriter-line{justify-content:center}
+}
+@media(max-width:768px){
+.nav-links{display:none}
+.hamburger{display:flex}
+.hero-text h1{font-size:2rem}
+.quick-facts{grid-template-columns:1fr}
+.profile-ring{width:220px;height:220px}
+.section-header h2{font-size:1.8rem}
+}
+@media(max-width:480px){
+.container{padding:0 16px}
+.hero-ctas{flex-direction:column;align-items:stretch}
+.btn{justify-content:center}
+.exp-cards{grid-template-columns:1fr}
+}
+</style>
 </head>
-
 <body>
-    <div class="nav-container">
-        <span>SAI SANDEEP</span>
-        <section class="nav-item" id="nav-item">
-            <a class="tab" href="#home">HOME</a>
-            <a class="tab" href="#about">ABOUT</a>
-            <a class="tab" href="#skills">SKILLS</a>
-            <a class="tab" href="#work">EXPERIENCE</a>
-            <a class="tab" href="#projects">PROJECTS</a>
-            <a class="tab" href="#services">SERVICES</a>
-            <a class="tab contact" href="#contact">CONTACT</a>
-        </section>
-        <button class="menu" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i></button>
-    </div>
 
-    <div class="main" id="home">
-        <div class="profile">
-            <img class="logo" src="profile.jpg" alt="Sai">
-        </div>
-        <div class="details">
-            <div class="intro"><span id="typed-text"></span></div>
-            <span class="name">VISWANATH SAI SANDEEP</span>
-            <section class="skill-card">
-                <div class="skill">Programmer</div>
-                <div class="skill">UI/UX Designer</div>
-                <div class="skill">Web Developer</div>
-            </section>
-        </div>
-    </div>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+<div class="container">
+<a href="#home" class="logo">Sai Sandeep</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home" class="active">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="hamburger" id="hamburger" aria-label="Toggle menu">
+<span></span><span></span><span></span>
+</div>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
 
-    <div class="contact-card">
-        <div class="contdisp">Let's Connect</div>
-        <div class="conticon">
-            <a href="https://mail.google.com/mail/?view=cm&to=vsaisandeep17@gmail.com">
-                <i class="fa-solid fa-envelope icon"></i>
-            </a>
-            <a href="https://www.instagram.com/urstruly.sai7">
-                <i class="fa-brands fa-instagram icon"></i>
-            </a>
-            <a href="https://github.com/ViswanathSaiSandeep">
-                <i class="fa-brands fa-github icon"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/viswanath-sai-sandeep/">
-                <i class="fa-brands fa-linkedin-in icon"></i>
-            </a>
-            <a href="https://x.com/SaiSandeep55769">
-                <i class="fa-brands fa-twitter icon"></i>
-            </a>
-        </div>
-    </div>
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+<div class="hero-cursor-glow" id="cursorGlow"></div>
+<div class="container">
+<div class="hero-grid">
+<div class="hero-text">
+<p class="greeting">Hi, I'm</p>
+<h1><span class="accent-name">Viswanath<br>Sai Sandeep</span></h1>
+<div class="typewriter-line">
+<span id="typewriter"></span><span class="typewriter-cursor"></span>
+</div>
+<p class="hero-bio">B.Tech CSE (AI &amp; DS) student at SIMATS Engineering, Chennai. Building AI-powered tools and elegant interfaces. <strong>9.3 CGPA</strong>.</p>
+<div class="hero-ctas">
+<a href="#projects" class="btn btn-primary"><i data-lucide="layers"></i> View Projects</a>
+<a href="#contact" class="btn btn-ghost"><i data-lucide="mail"></i> Contact Me</a>
+</div>
+<div class="social-row">
+<a href="https://github.com/ViswanathSaiSandeep" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+<svg class="social-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+</a>
+<a href="https://www.linkedin.com/in/viswanath-sai-sandeep/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+<svg class="social-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+</a>
+<a href="https://x.com/SaiSandeep55769" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter/X">
+<svg class="social-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+</a>
+<a href="https://www.instagram.com/urstruly.sai7" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+<svg class="social-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+</a>
+<a href="https://mail.google.com/mail/?view=cm&to=vsaisandeep17@gmail.com" target="_blank" rel="noopener" class="social-icon" aria-label="Email"><i data-lucide="mail"></i></a>
+</div>
+</div>
+<div class="hero-image-wrap">
+<div class="profile-ring">
+<img src="https://vsaisandeep.netlify.app/profile.jpg" alt="Viswanath Sai Sandeep" loading="eager">
+</div>
+</div>
+</div>
+</div>
+<div class="scroll-indicator">
+<span>Scroll</span>
+<i data-lucide="chevron-down"></i>
+</div>
+</section>
 
-    <div class="scroll">Scroll to continue</div> <br> <br> <br>
-    <!--About Page-->
-    <h1 class="aboutdisp"  id="about">About Me</h1>
-    <div class="about">
-        <div class="about-journey card">
-            <i class="fa-solid fa-circle-user icon"></i>
-            <h2>Introduction</h2>
-            <div class="edu">
-                <h3>Personal Profile</h3>
-                <p><b>Name:</b> VISWANATH SAI SANDEEP</p>
-                <p><b>DOB:</b> 17 June 2006  <i class="fa-solid fa-cake-candles"></i></p> 
-                <p><b>Career Goal:</b> Research in Technology</p>
-            </div>
-            <div class="edu">
-                <h3>Coding Skills</h3>
-                <div class="option">
-                    <a class="Score">C</a> <a class="Score">C++</a> <a class="Score">Java</a> <a class="Score">Python</a> <a class="Score">R</a> <a class="Score">HTML</a> <a class="Score">CSS</a> <a class="Score">Java Script</a> <a class="Score">React.js</a>
-                </div>
-            </div>
-            <div class="edu">
-                <h3>Soft Skills</h3>
-                <div class="option">
-                    <a class="Score">Leadership</a> <a class="Score">Punctual</a> <br> <a class="Score">Quick Learner</a>
-                    <a class="Score">Technical Guidance</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="edu-journey card">
-            <i class="fa-solid fa-user-graduate icon"></i>
-            <h2>Educational Journey</h2>
-            <div class="edu">
-                <h3>Schooling</h3>
-                <p><b>Place:</b> Spring Dale Public School, Tirupati</p>
-                <a class="Score">100%</a>
-            </div>
-            <div class="edu">
-                <h3>Intermediate</h3>
-                <p><b>Place:</b> Nucleus Junior College, Nandyal</p>
-                <a class="Score">88.7%</a>
-            </div>
-            <div class="edu">
-                <h3>Degree (3rd Year)</h3>
-                <p><b>Place:</b> SIMATS Engineering, Chennai</p>
-                <a class="Score">B Tech CSE AI & DS</a> <br> <br>
-                <a class="Score">9.3 CGPA</a>
-            </div>
-            <br>  
-        </div>
+<!-- ===== ABOUT ===== -->
+<section id="about">
+<div class="container">
+<div class="section-header reveal">
+<h2>About Me</h2>
+<span class="accent-line"></span>
+</div>
+<div class="about-grid">
+<div class="reveal">
+<p class="about-narrative">I'm a passionate developer and designer who thrives at the intersection of artificial intelligence and creative technology. Currently pursuing my B.Tech in Computer Science Engineering (AI &amp; Data Science) at SIMATS Engineering, Chennai, I focus on building tools that are both intelligent and beautifully crafted. From offline AI assistants to language translation apps, I love turning complex problems into elegant solutions.</p>
+<div class="quick-facts">
+<div class="fact-item">
+<div class="label">Full Name</div>
+<div class="value">Viswanath Sai Sandeep</div>
+</div>
+<div class="fact-item">
+<div class="label">Date of Birth</div>
+<div class="value">June 17, 2006</div>
+</div>
+<div class="fact-item">
+<div class="label">Location</div>
+<div class="value">Chennai, India</div>
+</div>
+<div class="fact-item">
+<div class="label">Career Goal</div>
+<div class="value">Research in Technology</div>
+</div>
+</div>
+<div style="margin-bottom:12px;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);font-weight:500">Interests &amp; Hobbies</div>
+<div class="interests-strip">
+<span class="pill">🏸 Badminton</span>
+<span class="pill">🎨 Drawing</span>
+<span class="pill">🖌️ Painting</span>
+<span class="pill">✏️ Pencil Art</span>
+<span class="pill">📷 Photography</span>
+<span class="pill">🎵 Music</span>
+</div>
+<div style="margin-top:24px;margin-bottom:10px;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);font-weight:500">Languages</div>
+<div class="lang-pills">
+<span class="lang-pill">EN English</span>
+<span class="lang-pill">TE Telugu</span>
+<span class="lang-pill">TA Tamil</span>
+<span class="lang-pill">HI Hindi</span>
+</div>
+</div>
+<div class="reveal reveal-delay-2">
+<div style="margin-bottom:20px;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);font-weight:500">Education</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-card">
+<h4>SIMATS Engineering</h4>
+<div class="stream">B.Tech CSE — AI &amp; Data Science</div>
+<div class="meta"><span class="year">2023 – 2027 (3rd Year)</span><span class="score">9.3 CGPA</span></div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-card">
+<h4>Nucleus Junior College</h4>
+<div class="stream">Intermediate — MPC</div>
+<div class="meta"><span class="year">Nandyal</span><span class="score">88.7%</span></div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-card">
+<h4>Spring Dale Public School</h4>
+<div class="stream">Schooling — CBSE</div>
+<div class="meta"><span class="year">Tirupati</span><span class="score">100%</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="other-journey card">
-            <i class="fa-solid fa-heart icon"></i>
-            <h2>Personal Interests</h2>
-            <div class="edu">
-                <h3>Hobbies</h3>
-                <div class="option">
-                    <a class="Score">Badminton</a> <a class="Score">Drawing</a> <a class="Score">Painting</a> 
-                    <a class="Score">Pencil Art</a> <a class="Score">Listening Music</a> 
-                    <a class="Score">Photography</a>
-                </div>
-            </div>
-            <div class="edu">
-                <h3>Languages Known</h3>
-                <a class="Score">English</a> <a class="Score">Telugu</a> <a class="Score">Tamil</a> <a class="Score">Hindi</a>
-            </div>
-            <div class="edu">
-                <h3>Areas of Interest</h3>
-                <div class="option">
-                    <a class="Score">Web Apps</a> <a class="Score">AI Tools</a> <a class="Score">Tech Blogs</a> <a class="Score">Software Testing</a> <a class="Score">Designing UI</a>
-                </div>
-            </div>
-        </div> <br> 
-    </div>
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+<div class="container">
+<div class="section-header reveal">
+<h2>Technical Skills</h2>
+<span class="accent-line"></span>
+</div>
+<div class="skills-grid">
+<!-- Row 1: Programming Languages + Platforms & Extras -->
+<div class="skill-group reveal">
+<h3><i data-lucide="code-2"></i> Programming Languages</h3>
+<div class="skill-bar-wrap">
+<div class="skill-bar-label"><span>Python</span><span>Advanced</span></div>
+<div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+</div>
+<div class="skill-bar-wrap">
+<div class="skill-bar-label"><span>C / C++</span><span>Intermediate</span></div>
+<div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+</div>
+<div class="skill-bar-wrap">
+<div class="skill-bar-label"><span>Java</span><span>Intermediate</span></div>
+<div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+</div>
+<div class="skill-bar-wrap">
+<div class="skill-bar-label"><span>React.js</span><span>Intermediate</span></div>
+<div class="skill-bar-track"><div class="skill-bar-fill" data-width="55"></div></div>
+</div>
+<div class="skill-bar-wrap">
+<div class="skill-bar-label"><span>HTML / CSS / JS</span><span>Learning</span></div>
+<div class="skill-bar-track"><div class="skill-bar-fill" data-width="45"></div></div>
+</div>
+<div class="skill-bar-wrap">
+<div class="skill-bar-label"><span>R</span><span>Beginner</span></div>
+<div class="skill-bar-track"><div class="skill-bar-fill" data-width="30"></div></div>
+</div>
+</div>
 
-    <!--Skill Page-->
-    <h1 class="aboutdisp" id="skills">Skills</h1>
-    <div class="Skill-Page">
-        <div class="skill-page">
-            <div class="skill-journey card1">
-                    <i class="fa-solid fa-code icon"></i>
-                    <h3>Coding Skills</h3>
-                    <div class="ski">
-                        <p><b>Beginner in</b></p>
-                        <a class="Score">HTML</a> <a class="Score">CSS</a> <a class="Score">Java Script</a> <a class="Score">R</a>
-                        <p><b>Intermediate in</b></p>
-                        <a class="Score">C</a> <a class="Score">C++</a> <a class="Score">Java</a> <a class="Score">React.js</a>
-                        <p><b>Advanced in</b></p>
-                        <a class="Score">Python</a> <br>
-                    </div>
-            </div>
+<div class="skill-group reveal reveal-delay-1">
+<h3><i data-lucide="smartphone"></i> Platforms &amp; Extras</h3>
+<div class="tool-grid" style="margin-bottom:20px">
+<span class="tool-chip"><i data-lucide="monitor"></i> Windows</span>
+<span class="tool-chip"><i data-lucide="smartphone"></i> Android</span>
+<span class="tool-chip"><i data-lucide="smartphone"></i> iOS</span>
+</div>
+<div style="margin-bottom:10px;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);font-weight:500">Smartphone Tech</div>
+<div class="tool-grid" style="margin-bottom:24px">
+<span class="tool-chip"><i data-lucide="cpu"></i> Firmware Upgrades</span>
+<span class="tool-chip"><i data-lucide="settings"></i> Software Troubleshooting</span>
+<span class="tool-chip"><i data-lucide="shield"></i> Android Rooting</span>
+<span class="tool-chip"><i data-lucide="bug"></i> Software Testing</span>
+<span class="tool-chip"><i data-lucide="flag"></i> MI Pilot Tester</span>
+</div>
+<div style="font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);font-weight:500;margin-bottom:12px">Currently Learning</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<span class="learning-badge"><i data-lucide="zap" style="width:14px;height:14px"></i> Full Stack Development</span>
+<span class="learning-badge"><i data-lucide="zap" style="width:14px;height:14px"></i> Python GUI Development</span>
+</div>
+</div>
 
-            <div class="tech-journey card1">
-                    <i class="fa-solid fa-compass-drafting icon"></i>
-                    <h3>Technical Development</h3>
-                    <div class="ski">
-                        <p><b>Web Development</b></p>
-                        <a class="Score">HTML</a> <a class="Score">CSS</a> <a class="Score">JS</a>
-                        <p><b>Tools & Platforms</b></p>
-                        <div class="option">
-                            <a class="Score">VS Code</a> <a class="Score">GitHub</a> <a class="Score">Lovable</a> <a class="Score">Google AI Studio</a> <a class="Score">PowerPoint</a> <br><a class="Score">Figma</a>
-                        </div>
-                    </div>
-            </div>
+<!-- Row 2: Web & Dev Tools + AI Tools -->
+<div class="skill-group reveal reveal-delay-2">
+<h3><i data-lucide="wrench"></i> Web &amp; Dev Tools</h3>
+<div class="tool-grid">
+<span class="tool-chip"><i data-lucide="code-2"></i> VS Code</span>
+<span class="tool-chip"><i data-lucide="git-branch"></i> Git</span>
+<span class="tool-chip"><i data-lucide="github"></i> GitHub</span>
+<span class="tool-chip"><i data-lucide="pen-tool"></i> Figma</span>
+<span class="tool-chip"><i data-lucide="globe"></i> Netlify</span>
+<span class="tool-chip"><i data-lucide="globe"></i> GitHub Pages</span>
+<span class="tool-chip"><i data-lucide="sparkles"></i> Google AI Studio</span>
+<span class="tool-chip"><i data-lucide="heart"></i> Lovable</span>
+<span class="tool-chip"><i data-lucide="presentation"></i> PowerPoint</span>
+</div>
+</div>
 
-            <div class="devtools-journey card1">
-                    <i class="fa-solid fa-laptop-code icon"></i>
-                    <h3>Technical Skills</h3>
-                    <div class="ski">
-                        <p><b>Familiar Operating Systems</b></p>
-                        <a class="Score">WINDOWS</a> <a class="Score">Android</a> <a class="Score">iOS</a>
-                        <p><b>Cloud & Hosting</b></p>
-                        <a class="Score">Netlify</a> <a class="Score">GitHub Pages</a>
-                        <p><b>Version Control</b></p>
-                        <a class="Score">Git</a> <a class="Score">GitHub</a>
-                        <p><b>AI Tools Used</b></p>
-                        <div class="option">
-                            <a class="Score">ChatGPT</a> <a class="Score">Gemini</a> <a class="Score">Lovable</a> <a class="Score">Firebase Studio</a> <a class="Score">Google AI Studio</a> <a class="Score">Claude</a> <a class="Score">Google Stitch</a> <a class="Score">Copilot</a> <a class="Score">Perplexity</a>
-                        </div>
-                        <p><b>Smartphone Skills</b></p>
-                        <div class="option">
-                            <a class="Score">Firmware Upgrades</a> <a class="Score">Software Troubleshooting</a> <br> <a class="Score">Rooting Android Device</a> <a class="Score">Software Testing</a>
-                        </div>
-                        <p><b>Technical Experience</b></p>
-                        <div class="option">
-                            <a class="Score">MI Pilot Tester for Xiaomi</a>
-                        </div>
-                        <p><b>Currently Learning</b></p>
-                        <div class="option">
-                            <a class="Score">Full Stack Development</a> <a class="Score">Python GUI Development</a>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <br> <br> <br>
+<div class="skill-group reveal reveal-delay-3">
+<h3><i data-lucide="cpu"></i> AI Tools</h3>
+<div class="tool-grid">
+<span class="tool-chip"><i data-lucide="bot"></i> ChatGPT</span>
+<span class="tool-chip"><i data-lucide="sparkles"></i> Gemini</span>
+<span class="tool-chip"><i data-lucide="brain"></i> Claude</span>
+<span class="tool-chip"><i data-lucide="zap"></i> Copilot</span>
+<span class="tool-chip"><i data-lucide="search"></i> Perplexity</span>
+<span class="tool-chip"><i data-lucide="heart"></i> Lovable</span>
+<span class="tool-chip"><i data-lucide="flame"></i> Firebase Studio</span>
+<span class="tool-chip"><i data-lucide="sparkles"></i> Google AI Studio</span>
+<span class="tool-chip"><i data-lucide="puzzle"></i> Google Stitch</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!--Experience Page-->
-    <h1 class="aboutdisp" id="work">Experience</h1> 
-    <div class="work">
-        <div class="work-card card1">
-            <i class="fa-solid fa-briefcase icon"></i>
-            <h2>Work Experience</h2>
-            <div class="edu">
-                <h3>INTERNSHIP</h3>
-                <p><b>Company:</b> PRAMAHASOFT SOLUTIONS</p>
-                <p><b>Position:</b> Intern</p>
-                <p><b>Role:</b> Developer & Tester</p>
-                <p><b>Duration:</b> Aug 2025 - Dec 2025</p>
-                <p><b>Domain:</b> AI & API Services</p>
-                <p><b>Key Projects worked with</b></p>
-                <a class="Score">Language Translator App</a> <br> <br>
-                <a class="Score">Company Websites - 2</a>
-            </div>
-        </div>
-    </div>
-    
-    <!--Projects Page-->
-    <h1 class="aboutdisp" id="projects">Projects</h1>
-    
-    <div class="project-section">
-        <div class="project-ui">
-            <h3 class="ui">PARIS AI -  Desktop Voice Assistant</h3>
-            <img class="uiss" src="markai.png" alt="PARIS AI"> <br>
-            <button class="view" onclick="window.location.href='markai.html';">View Project</button>
-        </div>
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+<div class="container">
+<div class="section-header reveal">
+<h2>Experience</h2>
+<span class="accent-line"></span>
+</div>
+<div class="exp-cards">
+<!-- PramahaSoft Internship -->
+<div class="exp-card reveal">
+<div class="exp-card-header">
+<div class="exp-avatar" style="background:transparent;border:none;border-radius:14px">
+<img src="logo.png" alt="PRAMAHASOFT Logo" style="width:100%;height:100%;object-fit:contain">
+</div>
+<div class="exp-card-header-text">
+<h3>PRAMAHASOFT SOLUTIONS</h3>
+<div class="role">Developer &amp; Tester</div>
+</div>
+</div>
+<div class="exp-badges">
+<span class="exp-badge type">Internship</span>
+<span class="exp-badge duration">Aug 2025 – Dec 2025</span>
+<span class="exp-badge domain">AI &amp; API Services</span>
+</div>
+<div class="exp-divider"></div>
+<ul class="exp-details">
+<li>Built a Language Translator App powered by AI &amp; API integrations</li>
+<li>Developed 2 production Company Websites with modern frontend stack</li>
+<li>Performed comprehensive testing and QA across all deliverables</li>
+<li>Gained hands-on experience in full software development lifecycle</li>
+<li>Collaborated with cross-functional teams on real client projects</li>
+</ul>
+<div style="margin-top:24px;">
+<div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:10px;font-weight:600">Core Technologies &amp; Skills:</div>
+<div class="project-tags">
+<span class="project-tag" style="color:var(--text-muted);border-color:rgba(255,255,255,0.08)">Python</span>
+<span class="project-tag" style="color:var(--text-muted);border-color:rgba(255,255,255,0.08)">Custom Tkinter</span>
+<span class="project-tag" style="color:var(--text-muted);border-color:rgba(255,255,255,0.08)">Microsoft Azure</span>
+<span class="project-tag" style="color:var(--text-muted);border-color:rgba(255,255,255,0.08)">HTML5 &amp; CSS3</span>
+<span class="project-tag" style="color:var(--text-muted);border-color:rgba(255,255,255,0.08)">JavaScript</span>
+<span class="project-tag" style="color:var(--text-muted);border-color:rgba(255,255,255,0.08)">API Integration</span>
+<span class="project-tag" style="color:var(--text-muted);border-color:rgba(255,255,255,0.08)">QA Testing</span>
+</div>
+</div>
+</div>
 
-        <div class="project-ui">
-            <h3 class="ui">PRAMAHA TRANSLATE</h3>
-            <img class="uiss uiss1" src="translateui.png" alt="PRAMAHA TRANSLATE"> <br>
-            <button class="view" onclick="window.location.href='pramahatranslate.html';">View Project</button>
-        </div>
-    </div>
+<!-- NEXSAI Community -->
+<div class="exp-card reveal reveal-delay-1">
+<div class="exp-card-header">
+<div class="exp-avatar" style="background:transparent;border:none;border-radius:14px">
+<img src="NexSai Logo.png" alt="NEXSAI Logo" style="width:100%;height:100%;object-fit:contain">
+</div>
+<div class="exp-card-header-text">
+<h3>NEXSAI COMMUNITY</h3>
+<div class="role">Founder &amp; Lead Creator</div>
+</div>
+</div>
+<div class="exp-badges">
+<span class="exp-badge type">Community</span>
+<span class="exp-badge domain">Tech News, AI Guides &amp; Reviews</span>
+</div>
+<div class="exp-divider"></div>
+<ul class="exp-details">
+<li>Founded and lead the NEXSAI Community brand across multiple platforms</li>
+<li>Create in-depth content covering tech news, AI guides, and product reviews</li>
+<li>Build and maintain the community website and social media channels</li>
+<li>Grow and engage an audience passionate about emerging technology</li>
+</ul>
+<div style="margin-top:12px;font-size:.82rem;color:var(--text-dim)">
+<a href="https://nexsaicommunity.netlify.app" target="_blank" rel="noopener" style="color:var(--accent-light);display:inline-flex;align-items:center;gap:5px;transition:color .2s"><i data-lucide="globe" style="width:13px;height:13px"></i> nexsaicommunity.netlify.app</a>
+</div>
+<div class="exp-social-row">
+<a href="https://www.youtube.com/@NEXSAICommunity" target="_blank" rel="noopener" class="exp-social-link">
+<svg class="social-svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+YouTube
+</a>
+<a href="https://t.me/nexsaicommunity" target="_blank" rel="noopener" class="exp-social-link">
+<svg class="social-svg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+Telegram
+</a>
+<a href="https://whatsapp.com/channel/0029Vb80VTu2Jl8HRTu7ig1K" target="_blank" rel="noopener" class="exp-social-link">
+<svg class="social-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+WhatsApp
+</a>
+<a href="https://www.instagram.com/nexsaicommunity" target="_blank" rel="noopener" class="exp-social-link">
+<svg class="social-svg" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+Instagram
+</a>
+<a href="https://x.com/nexsaicommunity" target="_blank" rel="noopener" class="exp-social-link">
+<svg class="social-svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+Twitter / X
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!--Service Page-->
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+<div class="container">
+<div class="section-header reveal">
+<h2>Projects <span class="badge">02</span></h2>
+<span class="accent-line"></span>
+</div>
+<div class="projects-grid">
+<div class="project-card reveal">
+<div class="project-image">
+<img src="https://vsaisandeep.netlify.app/markai.png" alt="PARIS AI — Desktop Voice Assistant" loading="lazy">
+<div class="project-overlay">
+<a href="markai.html" class="btn btn-primary"><i data-lucide="external-link"></i> View Project</a>
+</div>
+</div>
+<div class="project-info">
+<h3>PARIS AI</h3>
+<p>A voice-controlled desktop assistant for Windows PCs, built with Python and Tkinter. Integrated with Google Gemini API for smart voice interactions.</p>
+<div class="project-tags">
+<span class="project-tag">Python</span>
+<span class="project-tag">Tkinter</span>
+<span class="project-tag">Gemini API</span>
+<span class="project-tag">Voice Control</span>
+<span class="project-tag">Windows</span>
+</div>
+</div>
+</div>
+<div class="project-card reveal reveal-delay-1">
+<div class="project-image">
+<img src="https://vsaisandeep.netlify.app/translateui.png" alt="PRAMAHA TRANSLATE — Real Time Language Translator" loading="lazy">
+<div class="project-overlay">
+<a href="pramahatranslate.html" class="btn btn-primary"><i data-lucide="external-link"></i> View Project</a>
+</div>
+</div>
+<div class="project-info">
+<h3>PRAMAHA TRANSLATE</h3>
+<p>A real-time language translator for Windows PCs built with Python &amp; Custom Tkinter. Features 4 translation modes including speech-to-text and text-to-speech.</p>
+<div class="project-tags">
+<span class="project-tag">Python</span>
+<span class="project-tag">Custom Tkinter</span>
+<span class="project-tag">Microsoft Azure</span>
+<span class="project-tag">Speech-to-Text</span>
+<span class="project-tag">Windows</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <h1 class="aboutdisp" id="services">Services</h1>
-    <div class="service-disp">
+<!-- ===== SERVICES ===== -->
+<section id="services">
+<div class="container">
+<div class="section-header reveal">
+<h2>What I Offer</h2>
+<span class="accent-line"></span>
+</div>
+<div class="services-grid">
+<div class="service-card reveal">
+<div class="icon-wrap"><i data-lucide="terminal"></i></div>
+<h3>Programming</h3>
+<p>Python-based app development focusing on efficiency, readability &amp; robust functionality for real-world applications.</p>
+<a href="#contact" class="service-link">Get in Touch <i data-lucide="arrow-right"></i></a>
+</div>
+<div class="service-card reveal reveal-delay-1">
+<div class="icon-wrap"><i data-lucide="layout-dashboard"></i></div>
+<h3>Front-End Development</h3>
+<p>Responsive, interactive UIs using HTML, CSS, and JavaScript frameworks that feel snappy and look stunning.</p>
+<a href="#contact" class="service-link">Get in Touch <i data-lucide="arrow-right"></i></a>
+</div>
+<div class="service-card reveal reveal-delay-2">
+<div class="icon-wrap"><i data-lucide="palette"></i></div>
+<h3>UI Designing</h3>
+<p>Intuitive interfaces with Figma mockups and interactive prototypes that prioritize user experience.</p>
+<a href="#contact" class="service-link">Get in Touch <i data-lucide="arrow-right"></i></a>
+</div>
+<div class="service-card reveal reveal-delay-3">
+<div class="icon-wrap"><i data-lucide="rocket"></i></div>
+<h3>Custom Projects</h3>
+<p>End-to-end delivery combining programming, frontend, and UI design for tailored digital solutions.</p>
+<a href="#contact" class="service-link">Get in Touch <i data-lucide="arrow-right"></i></a>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="program-ser ser-card">
-            <i class="fa-solid fa-code icon"></i>
-            <h3>Programming</h3>
-            <p class="describe">Requested apps will be implemented using Python code, focusing on efficiency, readability & robust functionality to meet your needs</p>
-        </div>
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+<div class="container">
+<div class="section-header reveal">
+<h2>Let's Connect</h2>
+<span class="accent-line"></span>
+</div>
+<div class="contact-grid">
+<div class="contact-text reveal">
+<h3>Open to Opportunities</h3>
+<p>Open to internships, freelance projects, and collaborations. Let's build something remarkable together.</p>
+<div class="contact-info-items">
+<div class="contact-info-item">
+<div class="info-icon"><i data-lucide="mail"></i></div>
+<div class="info-text">
+<div class="info-label">Email</div>
+<div class="info-value"><a href="https://mail.google.com/mail/?view=cm&to=vsaisandeep17@gmail.com" target="_blank" rel="noopener">vsaisandeep17@gmail.com</a></div>
+</div>
+</div>
+<div class="contact-info-item">
+<div class="info-icon"><i data-lucide="map-pin"></i></div>
+<div class="info-text">
+<div class="info-label">Location</div>
+<div class="info-value">Chennai, India</div>
+</div>
+</div>
+<div class="contact-info-item">
+<div class="info-icon"><i data-lucide="graduation-cap"></i></div>
+<div class="info-text">
+<div class="info-label">Status</div>
+<div class="info-value">B.Tech CSE — 3rd Year</div>
+</div>
+</div>
+</div>
+<div class="social-row">
+<a href="https://github.com/ViswanathSaiSandeep" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+<svg class="social-svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+</a>
+<a href="https://www.linkedin.com/in/viswanath-sai-sandeep/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+<svg class="social-svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+</a>
+<a href="https://x.com/SaiSandeep55769" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter/X">
+<svg class="social-svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+</a>
+<a href="https://www.instagram.com/urstruly.sai7" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+<svg class="social-svg" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+</a>
+<a href="https://mail.google.com/mail/?view=cm&to=vsaisandeep17@gmail.com" target="_blank" rel="noopener" class="social-icon" aria-label="Email"><i data-lucide="mail"></i></a>
+</div>
+</div>
+<div class="reveal reveal-delay-2">
+<form class="contact-form" action="https://formsubmit.co/vsaisandeep17@gmail.com" method="POST">
+<h4>Send a Message</h4>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://vsaisandeep.netlify.app">
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" id="name" name="name" placeholder="Your name" required>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" placeholder="you@example.com" required>
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell me about your project or idea..." required></textarea>
+</div>
+<button type="submit" class="btn-submit"><i data-lucide="send"></i> Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="frontend-ser ser-card">
-            <i class="fa-solid fa-display icon"></i>
-            <h3>Front-End Development</h3>
-            <p class="describe">I can build responsive & interactive user interface using web development tools like HTML, CSS and Java Script frameworks</p>
-        </div>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+<div class="container">
+<p>&copy; <span id="footerYear"></span> Viswanath Sai Sandeep</p>
+</div>
+</footer>
 
-        <div class="ui-ser ser-card">
-            <i class="fa-brands fa-figma icon"></i>
-            <h3>UI Designing</h3>
-            <p class="describe">I can create intuitive & user-friendly interfaces that prioritize user enagement. My process involves creating detailed mockups & interactive prototypes using Figma</p>
-        </div>
+<!-- ===== SCRIPTS ===== -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+// Init Lucide Icons
+lucide.createIcons();
 
-        <div class="project-ser ser-card">
-            <i class="fa-solid fa-laptop-file icon"></i>
-            <h3>Projects</h3>
-            <p class="describe">I can create custom projects with expertise in programming, front-end development, and UI design, ensuring timely delivery without compromising quality.</p>
-        </div>
-    </div> <br> <br>
+// Footer year
+document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-    <!--Contact Section-->
+// ---- Navbar scroll ----
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+  lastScroll = window.scrollY;
+}, { passive: true });
 
-    <h1 class="aboutdisp" id="contact">Contact Me</h1>
-    <div class="contact-page">
-        <div class="profile-name">
-            <img class="logo1" src="profile.jpg" alt="V. Sai Sandeep">
-            <p class="name1">VISWANATH SAI SANDEEP</p>
-            <p class="contactfor">For Internships, projects & part time jobs</p>
-        </div>
+// ---- Mobile Menu ----
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
 
-        
-        <!-- Middle: Contact Form -->
-        <div class="contact-form">
-            
-        <h2 class="contact-heading">Feel free to reach me</h2> <br>
-            <form action="https://formspree.io/f/myzdqqgq" method="POST" id="contactForm" novalidate>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" aria-describedby="nameHint" required>
-                <div class="field-hint" id="nameHint"></div>
+// ---- Active nav link ----
+const sections = document.querySelectorAll('section[id]');
+const navLinksAll = document.querySelectorAll('.nav-links a');
+const activeObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinksAll.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-30% 0px -70% 0px' });
+sections.forEach(s => activeObserver.observe(s));
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" aria-describedby="emailHint" required>
-                <div class="field-hint" id="emailHint"></div>
+// ---- Scroll Reveal ----
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+revealElements.forEach(el => revealObserver.observe(el));
 
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" maxlength="500" placeholder="Write your message here..." aria-describedby="messageHint messageCounter" required></textarea>
-                <div class="field-hint" id="messageHint"></div>
-                <div class="char-counter" id="messageCounter">0/500</div>
+// ---- Skill Bars ----
+const skillBars = document.querySelectorAll('.skill-bar-fill');
+const skillObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      bar.style.width = bar.dataset.width + '%';
+      skillObserver.unobserve(bar);
+    }
+  });
+}, { threshold: 0.3 });
+skillBars.forEach(bar => skillObserver.observe(bar));
 
-                <input type="hidden" name="_subject" value="New message from Sai's Portfolio" />
-                <button type="submit" class="send-btn" id="sendBtn" disabled><i class="fa-solid fa-paper-plane"></i>  <span class="btn-text">Send</span></button>
-            </form>
-        </div>
+// ---- Typewriter ----
+const typewriterEl = document.getElementById('typewriter');
+const roles = ['AI Developer', 'Web Developer', 'UI/UX Designer'];
+let roleIndex = 0, charIndex = 0, isDeleting = false;
+function typewrite() {
+  const currentRole = roles[roleIndex];
+  if (isDeleting) {
+    typewriterEl.textContent = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typewriterEl.textContent = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+  }
+  let speed = isDeleting ? 40 : 80;
+  if (!isDeleting && charIndex === currentRole.length) {
+    speed = 2000;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    speed = 400;
+  }
+  setTimeout(typewrite, speed);
+}
+typewrite();
 
-        <div class="contact-opt">
-            <div class="contdisp1">Let's Connect</div>
-            <div class="conticon1">
-                <a class="nameico" href="https://mail.google.com/mail/?view=cm&to=vsaisandeep17@gmail.com">
-                    <i class="fa-solid fa-envelope icon1"></i> Gmail
-                </a>
-                <a class="nameico" href="https://github.com/ViswanathSaiSandeep">
-                    <i class="fa-brands fa-github icon1"></i> GitHub
-                </a>
-                <a class="nameico" href="https://www.linkedin.com/in/viswanath-sai-sandeep/">
-                    <i class="fa-brands fa-linkedin-in icon1"></i> LinkedIn
-                </a>
-                <a class="nameico" href="https://x.com/SaiSandeep55769">
-                    <i class="fa-brands fa-twitter icon1"></i> Twitter
-                </a>
-            </div>
-        </div>
-        <a></a>
-    </div>
-
-    <br>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js"></script>
+// ---- Cursor Glow on Hero ----
+const hero = document.getElementById('home');
+const cursorGlow = document.getElementById('cursorGlow');
+hero.addEventListener('mousemove', e => {
+  const rect = hero.getBoundingClientRect();
+  cursorGlow.style.left = (e.clientX - rect.left - 250) + 'px';
+  cursorGlow.style.top = (e.clientY - rect.top - 250) + 'px';
+  cursorGlow.style.opacity = '1';
+});
+hero.addEventListener('mouseleave', () => {
+  cursorGlow.style.opacity = '0';
+});
+</script>
 </body>
 </html>

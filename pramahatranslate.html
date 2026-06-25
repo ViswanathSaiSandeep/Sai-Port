@@ -3,66 +3,711 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pramaha Translate</title>
-    <link rel="stylesheet" href="pramahatranslate.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="websiteLogo.png">
+    <link rel="canonical" href="https://vsaisandeep.netlify.app/pramahatranslate.html">
+    <title>Pramaha Translate - Real Time Translator | Viswanath Sai Sandeep</title>
+    <meta name="description" content="Pramaha Translate is a light-weight, real-time language translator application for Windows PCs using Python and Custom Tkinter. Developed by Viswanath Sai Sandeep.">
+    <meta name="author" content="Viswanath Sai Sandeep">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        /* ── Reset & Base ─────────────────────────────────────── */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0a0a0f;
+            color: #e4e4e7;
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ── Background Effects ───────────────────────────────── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124, 58, 237, 0.15), transparent 60%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(124, 58, 237, 0.06), transparent 50%),
+                radial-gradient(ellipse 50% 50% at 20% 80%, rgba(124, 58, 237, 0.04), transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Layout Container ─────────────────────────────────── */
+        .page-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Back Button ──────────────────────────────────────── */
+        .back-btn {
+            position: fixed;
+            top: 28px;
+            left: 28px;
+            z-index: 100;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+            color: #a78bfa;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: rgba(124, 58, 237, 0.12);
+            border-color: rgba(124, 58, 237, 0.3);
+            color: #c4b5fd;
+            transform: translateX(-3px);
+        }
+
+        .back-btn i {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ── Hero Section ─────────────────────────────────────── */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 100px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #a78bfa;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+
+        .hero-badge i {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.6rem, 6vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-weight: 400;
+            color: #71717a;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Section Styling ──────────────────────────────────── */
+        .section {
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #7c3aed;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 20px;
+        }
+
+        .section-label i {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ── Glass Card ───────────────────────────────────────── */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            overflow: hidden;
+            transition: border-color 0.35s ease, transform 0.35s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(124, 58, 237, 0.2);
+        }
+
+        /* ── Screenshot Card ──────────────────────────────────── */
+        .screenshot-card {
+            padding: 16px;
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .screenshot-caption {
+            text-align: center;
+            padding-top: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #52525b;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Description Card ─────────────────────────────────── */
+        .desc-card {
+            padding: 36px 40px;
+        }
+
+        .desc-card h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #e4e4e7;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .desc-card h2 i {
+            width: 20px;
+            height: 20px;
+            color: #7c3aed;
+        }
+
+        .desc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .desc-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 0.95rem;
+            color: #a1a1aa;
+            line-height: 1.7;
+        }
+
+        .desc-list li .bullet {
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            margin-top: 10px;
+            border-radius: 50%;
+            background: #7c3aed;
+        }
+
+        .desc-list li strong {
+            color: #e4e4e7;
+            font-weight: 500;
+        }
+
+        /* ── Features Grid ────────────────────────────────────── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .feature-card {
+            padding: 32px;
+        }
+
+        .feature-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .feature-card-header .icon-wrap {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .feature-card-header .icon-wrap.green {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+
+        .feature-card-header .icon-wrap.amber {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
+        .feature-card-header .icon-wrap i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .feature-card-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #e4e4e7;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: #a1a1aa;
+        }
+
+        .feature-list li i {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+        }
+
+        .feature-list li i.check {
+            color: #22c55e;
+        }
+
+        .feature-list li i.upcoming {
+            color: #f59e0b;
+        }
+
+        .feature-list li i.issue {
+            color: #ef4444;
+        }
+
+        .issues-divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0 14px 0;
+        }
+
+        .issues-divider::before,
+        .issues-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .issues-divider span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #ef4444;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .issues-divider span i {
+            width: 13px;
+            height: 13px;
+        }
+
+        /* ── GitHub Link ──────────────────────────────────────── */
+        .github-section {
+            text-align: center;
+        }
+
+        .github-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.15);
+        }
+
+        .github-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(124, 58, 237, 0.3);
+        }
+
+        .github-btn i {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ── Tech Stack ───────────────────────────────────────── */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 48px;
+        }
+
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 100px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #a1a1aa;
+            transition: all 0.3s ease;
+        }
+
+        .tech-pill:hover {
+            border-color: rgba(124, 58, 237, 0.3);
+            color: #a78bfa;
+            background: rgba(124, 58, 237, 0.06);
+        }
+
+        .tech-pill i {
+            width: 14px;
+            height: 14px;
+            color: #7c3aed;
+        }
+
+        /* ── Footer ───────────────────────────────────────────── */
+        footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 32px;
+        }
+
+        footer p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #52525b;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Scroll Reveal ────────────────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger delays */
+        .reveal-d1 { transition-delay: 0.08s; }
+        .reveal-d2 { transition-delay: 0.16s; }
+        .reveal-d3 { transition-delay: 0.24s; }
+        .reveal-d4 { transition-delay: 0.32s; }
+
+        /* ── Responsive ───────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .page-wrapper {
+                padding: 0 16px;
+            }
+
+            .back-btn {
+                top: 16px;
+                left: 16px;
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding-top: 90px;
+                padding-bottom: 40px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .desc-card {
+                padding: 24px 22px;
+            }
+
+            .feature-card {
+                padding: 24px;
+            }
+
+            .section {
+                margin-bottom: 44px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .github-btn {
+                padding: 12px 28px;
+                font-size: 0.88rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <button class="goback" onclick="window.location.href='index.html';">Back</button>
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">
+        <i data-lucide="arrow-left"></i>
+        Back
+    </a>
 
-    <h1 class="title">Pramaha Translate</h1>
-    <h2 class="title">Real Time Language Translator</h2>
-    <div class="project-section">
-        <div class="project-ui">
-            <h3 class="ui">Pramaha Translate GUI</h3>
-            <img class="uiss" src="translateui.png" alt="PRAMAHA TRANSLATOR">
-        </div>
+    <div class="page-wrapper">
 
-        <div class="project-des">
-            <h3 class="ui">PRAMAHA TRANSLATE Description</h3>
-            <div class="des">
-                <p>Pramaha Translate is a <b>real-time language translator</b> for Windows PCs, developed using Python & Custom Tkinter. It features integration with <b>GoogleTrans</b>, which translates the text to other language.</p>
-                <p>The GUI is <b>simple & user-friendly</b>, designed for every user. The app features 4 modes so that the user can select their preferred mode for their convinience. The app is optimised & light-weight application which enables faster responses </p>
+        <!-- Hero -->
+        <section class="hero reveal">
+            <div class="hero-badge">
+                <i data-lucide="languages"></i>
+                Desktop Application
             </div>
-        </div>
+            <h1>PRAMAHA TRANSLATE</h1>
+            <p class="hero-subtitle">Real Time Language Translator</p>
+        </section>
 
-        <div class="project-features">
-            <h3 class="ui">Key Features & App Overview</h3>
-            <div class="project-feat">
-                <div class="features pcard">
-                    <h4>Features Implemented <i class="fa-solid fa-square-check"></i></h4>
-                    <p class="Score">Speech-To-Text</p>
-                    <p class="Score">Speech-To-Speech</p>
-                    <p class="Score">Text-To-Text</p>
-                    <p class="Score">Text-To-Speech</p>
-                    <p class="Score">Multiple Language Support</p>
-                    <p class="Score">Seamless Translations</p>
-                    <p class="Score">2 way communication</p>
-                    <p class="Score">Shuffle Source & Target Languages</p>
-                    <p class="Score">Clear Input & Output panels</p>
+        <!-- Screenshot -->
+        <section class="section reveal">
+            <span class="section-label">
+                <i data-lucide="monitor"></i>
+                Application Preview
+            </span>
+            <div class="glass-card screenshot-card">
+                <img src="translateui.png" alt="Pramaha Translate - Application Interface" loading="lazy">
+                <p class="screenshot-caption">Pramaha Translate — Main Interface</p>
+            </div>
+        </section>
+
+        <!-- Description -->
+        <section class="section reveal">
+            <span class="section-label">
+                <i data-lucide="file-text"></i>
+                About The Project
+            </span>
+            <div class="glass-card desc-card">
+                <h2>
+                    <i data-lucide="info"></i>
+                    Project Overview
+                </h2>
+                <ul class="desc-list">
+                    <li>
+                        <span class="bullet"></span>
+                        <span>Pramaha Translate is a <strong>real-time language translator</strong> for Windows PCs, developed using Python &amp; Custom Tkinter.</span>
+                    </li>
+                    <li>
+                        <span class="bullet"></span>
+                        <span>Features integration with <strong>Microsoft Azure Cognitive Services</strong> for high-quality language translation.</span>
+                    </li>
+                    <li>
+                        <span class="bullet"></span>
+                        <span>The GUI is <strong>simple &amp; user-friendly</strong>, designed for every user.</span>
+                    </li>
+                    <li>
+                        <span class="bullet"></span>
+                        <span>The app features <strong>4 modes</strong> so that the user can select their preferred mode for their convenience.</span>
+                    </li>
+                    <li>
+                        <span class="bullet"></span>
+                        <span>The app is an <strong>optimised &amp; light-weight</strong> application which enables faster responses.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section reveal">
+            <span class="section-label">
+                <i data-lucide="layout-grid"></i>
+                Features &amp; Status
+            </span>
+            <div class="features-grid">
+                <!-- Implemented Features -->
+                <div class="glass-card feature-card reveal reveal-d1">
+                    <div class="feature-card-header">
+                        <div class="icon-wrap green">
+                            <i data-lucide="circle-check-big"></i>
+                        </div>
+                        <h3>Features Implemented</h3>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check" class="check"></i> Speech-To-Text</li>
+                        <li><i data-lucide="check" class="check"></i> Speech-To-Speech</li>
+                        <li><i data-lucide="check" class="check"></i> Text-To-Text</li>
+                        <li><i data-lucide="check" class="check"></i> Text-To-Speech</li>
+                        <li><i data-lucide="check" class="check"></i> Multiple Language Support</li>
+                        <li><i data-lucide="check" class="check"></i> Seamless Translations</li>
+                        <li><i data-lucide="check" class="check"></i> 2 Way Communication</li>
+                        <li><i data-lucide="check" class="check"></i> Shuffle Source &amp; Target Languages</li>
+                        <li><i data-lucide="check" class="check"></i> Clear Input &amp; Output Panels</li>
+                    </ul>
                 </div>
 
-                <div class="bugs pcard">
-                    <h4>Features to be Implemented <i class="fa-solid fa-pen"></i></h4>
-                    <p class="Score">Microsoft API Intergration</p>
-                    <p class="Score">Enhanced Privacy & Security</p>
-                    <p class="Score">Improved Grammar</p>
-                    <p class="Score">Better Speech Recognition</p>
-                    <p class="Score">Enhanced Neural Voices</p>
-                    <h4><i class="fa-solid fa-triangle-exclamation"> </i> Known Issues</h4>
-                    <p class="Score">Weak Security</p>
-                    <p class="Score">Performance may affect in noisy areas</p>
-                    <p class="Score">Poor Grammar in translation</p>
+                <!-- Upcoming & Known Issues -->
+                <div class="glass-card feature-card reveal reveal-d2">
+                    <div class="feature-card-header">
+                        <div class="icon-wrap amber">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <h3>Upcoming &amp; Known Issues</h3>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i data-lucide="plus" class="upcoming"></i> Microsoft API Integration</li>
+                        <li><i data-lucide="plus" class="upcoming"></i> Enhanced Privacy &amp; Security</li>
+                        <li><i data-lucide="plus" class="upcoming"></i> Improved Grammar</li>
+                        <li><i data-lucide="plus" class="upcoming"></i> Better Speech Recognition</li>
+                        <li><i data-lucide="plus" class="upcoming"></i> Enhanced Neural Voices</li>
+                    </ul>
+                    <div class="issues-divider">
+                        <span><i data-lucide="triangle-alert"></i> Known Issues</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i data-lucide="alert-circle" class="issue"></i> Weak Security</li>
+                        <li><i data-lucide="alert-circle" class="issue"></i> Performance may affect in noisy areas</li>
+                        <li><i data-lucide="alert-circle" class="issue"></i> Poor Grammar in translation</li>
+                    </ul>
                 </div>
             </div>
-            <div class="documentation-card">
-                <div class="documentation">
-                    <h4>Click to go through the GitHub repository !</h4>
-                    <a href="https://github.com/ViswanathSaiSandeep/Real-Time-Language-Translator" class="link">GitHub Repository</a>
-                </div>
+        </section>
+
+        <!-- GitHub Link -->
+        <section class="section github-section reveal">
+            <a href="https://github.com/ViswanathSaiSandeep/Real-Time-Language-Translator" target="_blank" rel="noopener noreferrer" class="github-btn">
+                <i data-lucide="github"></i>
+                View GitHub Repository
+                <i data-lucide="external-link"></i>
+            </a>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="section reveal">
+            <div class="tech-stack">
+                <span class="tech-pill"><i data-lucide="code-2"></i> Python</span>
+                <span class="tech-pill"><i data-lucide="layout-template"></i> Custom Tkinter</span>
+                <span class="tech-pill"><i data-lucide="cloud"></i> Microsoft Azure</span>
+                <span class="tech-pill"><i data-lucide="mic"></i> Speech-to-Text</span>
+                <span class="tech-pill"><i data-lucide="monitor"></i> Windows</span>
             </div>
-        </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="reveal">
+            <p>&copy; <span id="year"></span> Viswanath Sai Sandeep</p>
+        </footer>
+
     </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll reveal with IntersectionObserver
+        (function () {
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+            );
+            revealElements.forEach((el) => observer.observe(el));
+        })();
+    </script>
 </body>
 </html>

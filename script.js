@@ -1,11 +1,11 @@
-function toggleMenu(){
+function toggleMenu() {
     const navItem = document.getElementById("nav-item");
     const menuButton = document.querySelector(".menu");
     const overlay = document.querySelector(".menu-overlay");
-    
+
     navItem.classList.toggle("show");
     menuButton.classList.toggle("active");
-    
+
     // Toggle overlay if it exists
     if (overlay) {
         overlay.classList.toggle("show");
@@ -16,10 +16,10 @@ function closeMenu() {
     const navItem = document.getElementById("nav-item");
     const menuButton = document.querySelector(".menu");
     const overlay = document.querySelector(".menu-overlay");
-    
+
     navItem.classList.remove("show");
     menuButton.classList.remove("active");
-    
+
     // Hide overlay if it exists
     if (overlay) {
         overlay.classList.remove("show");
@@ -27,6 +27,171 @@ function closeMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    // ========== SPLASH SCREEN ORCHESTRATION ==========
+    const splash = document.getElementById('splash-screen');
+    const splashName = document.querySelector('.splash-name');
+    const navBrand = document.getElementById('nav-brand');
+    const body = document.body;
+
+    const splashShown = sessionStorage.getItem('splashShown');
+
+    if (splashShown && splash) {
+        // Skip splash screen on re-entry
+        splash.remove();
+        body.classList.remove('splash-active');
+        if (navBrand) {
+            navBrand.style.transition = 'none';
+            navBrand.style.opacity = '1';
+            navBrand.style.transform = 'translateX(0)';
+            navBrand.classList.add('visible');
+        }
+        triggerHeroAnimations();
+    } else {
+        // Lock scroll during splash
+        body.classList.add('splash-active');
+
+        // Mark as shown in this session
+        sessionStorage.setItem('splashShown', 'true');
+
+        // Phase 1: Name fades in at center (CSS animation handles this, 0.8s)
+        // Phase 2: After 1.5s, smoothly move name to navbar position
+        setTimeout(() => {
+            if (!splashName || !navBrand) return;
+            // Get the exact position of the navbar brand element
+            const navRect = navBrand.getBoundingClientRect();
+            const splashRect = splashName.getBoundingClientRect();
+
+            // With transform-origin: left center, align left edges and vertical centers
+            const tx = navRect.left - splashRect.left;
+            const ty = (navRect.top + navRect.height / 2) - (splashRect.top + splashRect.height / 2);
+
+            // Calculate scale ratio based on font sizes
+            const navFontSize = parseFloat(getComputedStyle(navBrand).fontSize);
+            const splashFontSize = parseFloat(getComputedStyle(splashName).fontSize);
+            const scale = navFontSize / splashFontSize;
+
+            // Step A: Freeze the current animated state via inline styles
+            splashName.style.animation = 'none';
+            splashName.style.opacity = '1';
+            splashName.style.transform = 'scale(1)';
+            splashName.style.letterSpacing = '4px';
+
+            // Step B: Double rAF ensures browser paints the frozen state first
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    // Now add the transition and set the target transform
+                    // Keep opacity at 1 — the name stays visible until splash fades out
+                    splashName.style.transition = 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), letter-spacing 1.2s ease';
+                    splashName.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+                    splashName.style.letterSpacing = '0px';
+                });
+            });
+        }, 1500);
+
+        // Phase 3: After fly completes (~1.3s after trigger), fade out splash & reveal site
+        setTimeout(() => {
+            // Show the navbar brand BEFORE fading splash so it's already there underneath
+            if (navBrand) {
+                navBrand.style.transition = 'none';
+                navBrand.style.opacity = '1';
+                navBrand.style.transform = 'translateX(0)';
+                navBrand.classList.add('visible');
+            }
+
+            // Now fade out the splash — the navbar brand is already visible behind it
+            if (splash) {
+                splash.classList.add('fade-out');
+                body.classList.remove('splash-active');
+            }
+
+            // Trigger hero section entrance animations
+            triggerHeroAnimations();
+
+            // Remove splash from DOM after fade finishes
+            setTimeout(() => {
+                if (splash) splash.remove();
+            }, 700);
+        }, 3000);
+    }
+
+    // ========== NAVBAR SCROLL SHRINK ==========
+    const navbar = document.getElementById('navbar');
+    let ticking = false;
+
+    function updateNavbar() {
+        if (window.scrollY > 60) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // ========== HERO ENTRANCE ANIMATIONS ==========
+    function triggerHeroAnimations() {
+        // Profile photo bounce-in
+        const logo = document.querySelector('.logo');
+        if (logo) {
+            setTimeout(() => logo.classList.add('animate-in'), 100);
+        }
+
+        // Details section (intro text + name + skill cards)
+        const details = document.querySelector('.details');
+        if (details) {
+            setTimeout(() => details.classList.add('animate-in'), 300);
+        }
+
+        // Skill cards staggered entrance
+        const skillCards = document.querySelectorAll('.skill-card .skill');
+        skillCards.forEach((card, i) => {
+            setTimeout(() => card.classList.add('animate-in'), 600 + i * 200);
+        });
+    }
+
+    // ========== SECTION HEADINGS SLIDE-IN ==========
+    const headings = document.querySelectorAll('.aboutdisp');
+    if ('IntersectionObserver' in window) {
+        const headingObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in');
+                    headingObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+
+        headings.forEach(h => headingObserver.observe(h));
+    } else {
+        headings.forEach(h => h.classList.add('slide-in'));
+    }
+
+    // ========== SERVICE CARDS FLOAT ACTIVATION ==========
+    const serviceCards = document.querySelectorAll('.ser-card');
+    if ('IntersectionObserver' in window) {
+        const floatObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('floating');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        serviceCards.forEach(card => floatObserver.observe(card));
+    } else {
+        serviceCards.forEach(card => card.classList.add('floating'));
+    }
+
+
+
+
     // Initialize Typed.js
     new Typed('#typed-text', {
         strings: ["Hey I'm", "Welcome!", "Glad to see you!"],
@@ -35,55 +200,55 @@ document.addEventListener("DOMContentLoaded", function () {
         backDelay: 1000,
         loop: true
     });
-    
+
     // Create overlay element for mobile menu
     const overlay = document.createElement('div');
     overlay.className = 'menu-overlay';
     document.body.appendChild(overlay);
-    
+
     // Add click event to overlay to close menu
     overlay.addEventListener('click', closeMenu);
-    
+
     // Add click events to all navigation links to close menu
     const navLinks = document.querySelectorAll('.nav-item .tab');
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             // Close menu when any nav link is clicked
             setTimeout(closeMenu, 150); // Small delay for better UX
         });
     });
-    
+
     // Close menu when clicking outside of it
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         const navContainer = document.querySelector('.nav-container');
         const navItem = document.getElementById("nav-item");
-        
+
         // Check if click is outside nav container and menu is open
         if (!navContainer.contains(e.target) && navItem.classList.contains('show')) {
             closeMenu();
         }
     });
-    
+
     // Close menu on escape key press
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             closeMenu();
         }
     });
-    
+
     // Handle window resize - close menu if window becomes large
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         if (window.innerWidth > 768) {
             closeMenu();
         }
     });
-    
+
     // Smooth scroll behavior for navigation links
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            
+
             if (targetId.startsWith('#')) {
                 const targetSection = document.querySelector(targetId);
                 if (targetSection) {
@@ -165,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
     applyStagger('.work .work-card');
 
     // -------- Active nav highlight by section in view --------
-    const sectionIds = ['home','about','skills','work','projects','services','contact'];
+    const sectionIds = ['home', 'about', 'skills', 'work', 'projects', 'services', 'contact'];
     const linkMap = new Map();
     sectionIds.forEach(id => {
         const link = document.querySelector(`.nav-item a[href="#${id}"]`);
@@ -316,7 +481,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const travel = Math.max(20, Math.min(56, btnRect.width - iconRect.width - 24));
                 sendBtn.style.setProperty('--plane-travel', `${Math.round(travel)}px`);
                 sendBtn.style.setProperty('--plane-duration', '0.9s');
-            } catch (_) {}
+            } catch (_) { }
 
             // Kick off network request
             const planeAnimMs = 900; // keep in sync with --plane-duration

@@ -3,74 +3,713 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARK AI</title>
-    <link rel="stylesheet" href="markai.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="websiteLogo.png">
+    <link rel="canonical" href="https://vsaisandeep.netlify.app/markai.html">
+    <title>PARIS AI - Desktop Voice Assistant | Viswanath Sai Sandeep</title>
+    <meta name="description" content="PARIS AI is a voice-controlled desktop assistant for Windows PCs, integrated with Google Gemini API for smart voice interactions. Developed by Viswanath Sai Sandeep.">
+    <meta name="author" content="Viswanath Sai Sandeep">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        /* ── Reset & Base ─────────────────────────────────── */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0a0a0f;
+            color: #e4e4e7;
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ── Background Effects ───────────────────────────── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124, 58, 237, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 50% at 10% 80%, rgba(124, 58, 237, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Layout Container ─────────────────────────────── */
+        .page-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ── Back Button ──────────────────────────────────── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+            color: #a78bfa;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            margin-bottom: 3.5rem;
+        }
+
+        .back-button:hover {
+            background: rgba(124, 58, 237, 0.12);
+            border-color: rgba(124, 58, 237, 0.3);
+            color: #c4b5fd;
+            transform: translateX(-4px);
+        }
+
+        .back-button i {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ── Hero Section ─────────────────────────────────── */
+        .hero {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 100px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #a78bfa;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge i {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-weight: 400;
+            color: #71717a;
+            letter-spacing: -0.01em;
+        }
+
+        /* ── Glass Card Base ──────────────────────────────── */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            overflow: hidden;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(124, 58, 237, 0.15);
+            box-shadow: 0 8px 40px rgba(124, 58, 237, 0.06);
+        }
+
+        /* ── Screenshot Section ───────────────────────────── */
+        .screenshot-section {
+            margin-bottom: 3rem;
+        }
+
+        .screenshot-card {
+            padding: 6px;
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .screenshot-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: #52525b;
+            letter-spacing: 0.02em;
+        }
+
+        .screenshot-label i {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ── Section Titles ────────────────────────────────── */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #e4e4e7;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title .icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .section-title .icon-wrap i {
+            width: 18px;
+            height: 18px;
+            color: #a78bfa;
+        }
+
+        /* ── Description Section ──────────────────────────── */
+        .description-section {
+            margin-bottom: 3rem;
+        }
+
+        .description-card {
+            padding: 2rem 2.25rem;
+        }
+
+        .description-card p {
+            color: #a1a1aa;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .description-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .description-card strong {
+            color: #e4e4e7;
+            font-weight: 600;
+        }
+
+        /* ── Features Grid ────────────────────────────────── */
+        .features-section {
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .feature-card {
+            padding: 1.75rem 1.5rem;
+        }
+
+        .feature-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .feature-card-header i {
+            width: 20px;
+            height: 20px;
+        }
+
+        .feature-card-header.implemented i {
+            color: #34d399;
+        }
+
+        .feature-card-header.upcoming i {
+            color: #fbbf24;
+        }
+
+        .feature-card-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #e4e4e7;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.875rem;
+            color: #a1a1aa;
+            line-height: 1.5;
+        }
+
+        .feature-list li i {
+            width: 15px;
+            height: 15px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .feature-list li .check-icon {
+            color: #34d399;
+        }
+
+        .feature-list li .upcoming-icon {
+            color: #fbbf24;
+        }
+
+        .feature-list li .issue-icon {
+            color: #f87171;
+        }
+
+        .issues-divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 1.5rem 0 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .issues-divider i {
+            width: 18px;
+            height: 18px;
+            color: #f87171;
+        }
+
+        .issues-divider span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e4e4e7;
+        }
+
+        /* ── Release Note ─────────────────────────────────── */
+        .release-section {
+            margin-bottom: 3rem;
+        }
+
+        .release-card {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            border-left: 3px solid rgba(124, 58, 237, 0.5);
+        }
+
+        .release-card i {
+            width: 22px;
+            height: 22px;
+            color: #a78bfa;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .release-card p {
+            font-size: 0.9rem;
+            color: #a1a1aa;
+            line-height: 1.7;
+        }
+
+        /* ── Documentation Link ───────────────────────────── */
+        .docs-section {
+            margin-bottom: 3.5rem;
+            text-align: center;
+        }
+
+        .docs-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            border: 1px solid rgba(124, 58, 237, 0.5);
+            border-radius: 12px;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 24px rgba(124, 58, 237, 0.25);
+        }
+
+        .docs-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(124, 58, 237, 0.35);
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .docs-button i {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ── Tech Stack ───────────────────────────────────── */
+        .techstack-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #a1a1aa;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease;
+        }
+
+        .tech-pill:hover {
+            border-color: rgba(124, 58, 237, 0.3);
+            color: #a78bfa;
+            background: rgba(124, 58, 237, 0.08);
+        }
+
+        .tech-pill i {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ── Footer ───────────────────────────────────────── */
+        .footer {
+            text-align: center;
+            padding: 2.5rem 0 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer p {
+            font-size: 0.82rem;
+            color: #52525b;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.01em;
+        }
+
+        /* ── Scroll Reveal ────────────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* stagger delays */
+        .reveal-d1 { transition-delay: 0.1s; }
+        .reveal-d2 { transition-delay: 0.2s; }
+        .reveal-d3 { transition-delay: 0.3s; }
+        .reveal-d4 { transition-delay: 0.4s; }
+
+        /* ── Responsive ───────────────────────────────────── */
+        @media (max-width: 768px) {
+            .page-wrapper {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .back-button {
+                margin-bottom: 2.5rem;
+            }
+
+            .hero {
+                margin-bottom: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .description-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .release-card {
+                padding: 1.25rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .docs-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="page-wrapper">
 
-    <button class="goback" onclick="window.location.href='index.html';">Back</button>
+        <!-- Back Button -->
+        <a href="index.html" class="back-button">
+            <i data-lucide="arrow-left"></i>
+            Back to Portfolio
+        </a>
 
-    <h1 class="title">PARIS AI - Desktop Voice Assistant</h1>
-
-    <div class="project-section">
-        <div class="project-ui">
-            <h3 class="ui">PARIS AI GUI</h3>
-            <img class="uiss" src="markai.png" alt="MARK AI">
-        </div>
-
-        <div class="project-des">
-            <h3 class="ui">PARIS AI Description</h3>
-            <div class="des">
-                <p>PARIS AI is a <b>voice-controlled desktop assistant</b> for Windows PCs, developed using Python and Tkinter. It features integration with <b>Google Gemini API </b>, enabling smart & accurate responses. </p>
-                <p>The GUI is <b>simple & user-friendly</b>, designed for every user. PARIS AI responds to voice commands & performs tasks efficiently, offering a smooth user experience.</p>
-                <p>The application size is around <b>1.5 GB</b> due to various dependencies. This project showcases skills in Python, API integration, & desktop UI design.</p>
+        <!-- Hero -->
+        <section class="hero reveal">
+            <div class="hero-badge">
+                <i data-lucide="mic"></i>
+                Voice Assistant
             </div>
-        </div>
+            <h1>PARIS AI</h1>
+            <p class="hero-subtitle">Desktop Voice Assistant</p>
+        </section>
 
-        <div class="project-features">
-            <h3 class="ui">Key Features & App Overview</h3>
-            <div class="project-feat">
-                <div class="features pcard">
-                    <h4>Features Implemented <i class="fa-solid fa-square-check"></i></h4>
-                    <p class="Score">Greetings at Startup</p>
-                    <p class="Score">Facial Recognition during Startup</p>
-                    <p class="Score">Voice Interaction</p>
-                    <p class="Score">Voice triggered WhatsApp messaging</p>
-                    <p class="Score">Setting Alarms</p>
-                    <p class="Score">Playing Music</p>
-                    <p class="Score">Browsing Internet</p>
-                    <p class="Score">Answering Queries through Gemini</p>
-                    <p class="Score">Image Generation through Gemini</p>
-                    <p class="Score">Capturing Images through Webcam</p>
-                    <p class="Score">Controlling Computer through Voice Opening Apps / Shutdown / Reboot / Battery Levels / Time & Date / Switch Tabs / Screenshots</p>
-                    <p class="Score">Note taking through voice</p>
+        <!-- Screenshot -->
+        <section class="screenshot-section reveal reveal-d1">
+            <div class="glass-card screenshot-card">
+                <img src="markai.png" alt="PARIS AI Desktop Voice Assistant Interface" loading="lazy">
+                <div class="screenshot-label">
+                    <i data-lucide="monitor"></i>
+                    PARIS AI — Application Interface
                 </div>
+            </div>
+        </section>
 
-                <div class="bugs pcard">
-                    <h4>Features to be Implemented <i class="fa-solid fa-pen"></i></h4>
-                    <p class="Score">Keyboard Interaction</p>
-                    <p class="Score">Asking queries through webcam with Gemini Integration</p>
-                    <p class="Score">Google Maps Integration</p>
-                    <p class="Score">Sending Emails through Voice</p>
-                    <p class="Score">Improved Facial Recognition</p>
-                    <h4><i class="fa-solid fa-triangle-exclamation"> </i> Known Issues</h4>
-                    <p class="Score">Longer Startup (30-60 sec)</p>
-                    <p class="Score">Performance may affect in noisy areas</p>
-                    <p class="Score">Limited Security protocols</p>
-                    <h4><i class="fa-solid fa-calendar-days"></i> Release Date</h4>
-                    <div class="release">
-                        <a>PARIS AI is actively under development. Once all features are implemented and thoroughly tested for stability, the official release date will be announced. Regular updates will be posted here to keep you informed.</a>
+        <!-- Description -->
+        <section class="description-section reveal reveal-d1">
+            <div class="section-title">
+                <div class="icon-wrap"><i data-lucide="file-text"></i></div>
+                About the Project
+            </div>
+            <div class="glass-card description-card">
+                <p>PARIS AI is a <strong>voice-controlled desktop assistant</strong> for Windows PCs, developed using Python and Tkinter. It features integration with <strong>Google Gemini API</strong>, enabling smart &amp; accurate responses.</p>
+                <p>The GUI is <strong>simple &amp; user-friendly</strong>, designed for every user. PARIS AI responds to voice commands &amp; performs tasks efficiently, offering a smooth user experience.</p>
+                <p>The application size is around <strong>1.5 GB</strong> due to various dependencies. This project showcases skills in <strong>Python, API integration, &amp; desktop UI design</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features-section reveal reveal-d2">
+            <div class="section-title">
+                <div class="icon-wrap"><i data-lucide="layers"></i></div>
+                Key Features &amp; App Overview
+            </div>
+            <div class="features-grid">
+
+                <!-- Implemented -->
+                <div class="glass-card feature-card">
+                    <div class="feature-card-header implemented">
+                        <i data-lucide="check-circle-2"></i>
+                        <h3>Features Implemented</h3>
                     </div>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check" class="check-icon"></i> Greetings at Startup</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Facial Recognition during Startup</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Voice Interaction</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Voice triggered WhatsApp messaging</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Setting Alarms</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Playing Music</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Browsing Internet</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Answering Queries through Gemini</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Image Generation through Gemini</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Capturing Images through Webcam</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Controlling Computer through Voice — Opening Apps / Shutdown / Reboot / Battery Levels / Time &amp; Date / Switch Tabs / Screenshots</li>
+                        <li><i data-lucide="check" class="check-icon"></i> Note taking through voice</li>
+                    </ul>
+                </div>
+
+                <!-- Upcoming & Issues -->
+                <div class="glass-card feature-card">
+                    <div class="feature-card-header upcoming">
+                        <i data-lucide="pencil"></i>
+                        <h3>Upcoming Features</h3>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i data-lucide="plus" class="upcoming-icon"></i> Keyboard Interaction</li>
+                        <li><i data-lucide="plus" class="upcoming-icon"></i> Asking queries through webcam with Gemini Integration</li>
+                        <li><i data-lucide="plus" class="upcoming-icon"></i> Google Maps Integration</li>
+                        <li><i data-lucide="plus" class="upcoming-icon"></i> Sending Emails through Voice</li>
+                        <li><i data-lucide="plus" class="upcoming-icon"></i> Improved Facial Recognition</li>
+                    </ul>
+
+                    <div class="issues-divider">
+                        <i data-lucide="alert-triangle"></i>
+                        <span>Known Issues</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i data-lucide="info" class="issue-icon"></i> Longer Startup (30–60 sec)</li>
+                        <li><i data-lucide="info" class="issue-icon"></i> Performance may be affected in noisy areas</li>
+                        <li><i data-lucide="info" class="issue-icon"></i> Limited Security protocols</li>
+                    </ul>
                 </div>
             </div>
-            <div class="documentation-card">
-                <div class="documentation">
-                    <h4>Click to go through the documentation !</h4>
-                    <a href="https://docs.google.com/document/d/1YjdcJz28azMXlA7GYjDmw2ulDneAssWcDH-ndn-b9bE/edit?usp=sharing" class="link">Documentation of PARIS AI</a>
-                </div>
+        </section>
+
+        <!-- Release Date -->
+        <section class="release-section reveal reveal-d3">
+            <div class="section-title">
+                <div class="icon-wrap"><i data-lucide="calendar"></i></div>
+                Release Status
             </div>
-        </div>
+            <div class="glass-card release-card">
+                <i data-lucide="clock"></i>
+                <p>PARIS AI is actively under development. Once all features are implemented and thoroughly tested for stability, the official release date will be announced. Regular updates will be posted here to keep you informed.</p>
+            </div>
+        </section>
+
+        <!-- Documentation -->
+        <section class="docs-section reveal reveal-d3">
+            <a href="https://docs.google.com/document/d/1YjdcJz28azMXlA7GYjDmw2ulDneAssWcDH-ndn-b9bE/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="docs-button">
+                <i data-lucide="external-link"></i>
+                View Documentation
+            </a>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="techstack-section reveal reveal-d4">
+            <div class="section-title" style="justify-content: center;">
+                <div class="icon-wrap"><i data-lucide="cpu"></i></div>
+                Tech Stack
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill"><i data-lucide="code-2"></i> Python</span>
+                <span class="tech-pill"><i data-lucide="layout"></i> Tkinter</span>
+                <span class="tech-pill"><i data-lucide="sparkles"></i> Gemini API</span>
+                <span class="tech-pill"><i data-lucide="mic"></i> Voice Control</span>
+                <span class="tech-pill"><i data-lucide="monitor"></i> Windows</span>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer reveal reveal-d4">
+            <p>&copy; <span id="year"></span> Viswanath Sai Sandeep</p>
+        </footer>
+
     </div>
+
+    <!-- Scripts -->
+    <script>
+        // Dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Scroll Reveal with IntersectionObserver
+        (function () {
+            const elements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+                );
+                elements.forEach((el) => observer.observe(el));
+            } else {
+                // Fallback: show all immediately
+                elements.forEach((el) => el.classList.add('visible'));
+            }
+        })();
+    </script>
 </body>
 </html>
