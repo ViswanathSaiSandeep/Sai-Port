@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Viswanath Sai Sandeep — AI Developer · Web Developer · UI/UX Designer</title>
 <meta name="description" content="Portfolio of Viswanath Sai Sandeep — AI Developer, Web Developer, and UI/UX Designer. B.Tech CSE (AI & DS) student building AI-powered tools and elegant interfaces.">
-<meta name="keywords" content="Sai Sandeep, AI Developer, Web Developer, UI/UX Designer, Portfolio, SIMATS, Chennai">
+<meta name="keywords" content="Sai Sandeep, AI Developer, Web Developer, UI/UX Designer, Portfolio, SIMATS, Chennai, NPTEL Certified, Oracle SQL Certified, Best Outgoing Student, Tech Star Summit, Research Paper, Awards, Certifications">
 <meta name="author" content="Viswanath Sai Sandeep">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a0a0f">
@@ -42,7 +42,67 @@
   "alumniOf": {
     "@type": "EducationalOrganization",
     "name": "SIMATS Engineering"
-  }
+  },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Tech Star Summit 2025 — Award Winner",
+      "credentialCategory": "Award",
+      "recognizedBy": {"@type": "Organization", "name": "SIMATS Engineering"},
+      "dateCreated": "2025-06"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Human Computer Interaction — Elite Certification",
+      "credentialCategory": "Certificate",
+      "recognizedBy": {"@type": "Organization", "name": "NPTEL — IIIT Delhi"},
+      "dateCreated": "2026-04",
+      "educationalLevel": "Elite"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Introduction to Internet of Things — Elite Certification",
+      "credentialCategory": "Certificate",
+      "recognizedBy": {"@type": "Organization", "name": "NPTEL — IIT Kharagpur"},
+      "dateCreated": "2025-10",
+      "educationalLevel": "Elite"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Oracle Database SQL — Certified Specialist",
+      "credentialCategory": "Certificate",
+      "recognizedBy": {"@type": "Organization", "name": "Oracle University"},
+      "dateCreated": "2024-10"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Netflix Clone Using HTML — Bootcamp Certificate",
+      "credentialCategory": "Certificate",
+      "recognizedBy": {"@type": "Organization", "name": "DevTown × Google Developer Groups (VIT-AP)"},
+      "dateCreated": "2025-06"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "INTELSEC 2026 — Research Paper Presentation",
+      "credentialCategory": "Award",
+      "recognizedBy": {"@type": "Organization", "name": "SIMATS Engineering — Dept. of Intelligence Systems"},
+      "dateCreated": "2026-02"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Best Outgoing Student Award",
+      "credentialCategory": "Award",
+      "recognizedBy": {"@type": "Organization", "name": "International Educational & Research Culture Association (IERCA)"},
+      "dateCreated": "2026-05"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Best Class Student Award — National Student Award 2025",
+      "credentialCategory": "Award",
+      "recognizedBy": {"@type": "Organization", "name": "Novel Research Academy, Puducherry"},
+      "dateCreated": "2025-03"
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,6 +111,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden;width:100%}
+button,a{-webkit-tap-highlight-color:transparent;outline:none}
+button:focus,a:focus{outline:none}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 :root{
 --bg:#0a0a0f;--bg-card:rgba(255,255,255,0.03);--bg-card-hover:rgba(255,255,255,0.06);
 --border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.14);
@@ -85,16 +149,16 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.02
 .reveal-delay-4{transition-delay:.4s}
 
 /* -------- NAVBAR -------- */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:background .4s ease,padding .4s ease,border-color .4s ease,backdrop-filter .4s ease;background:transparent;border-bottom:1px solid transparent}
+.navbar{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;padding:18px 0;transition:background .4s ease,padding .4s ease,border-color .4s ease,backdrop-filter .4s ease;background:transparent;border-bottom:1px solid transparent}
 .navbar.scrolled{background:rgba(10,10,15,.75);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);border-bottom-color:rgba(255,255,255,0.07);padding:12px 0}
-.navbar .container{display:flex;align-items:center;justify-content:space-between}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--container);flex-wrap:nowrap}
 .logo{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--accent);letter-spacing:-0.02em}
 .nav-links{display:flex;gap:32px;align-items:center;list-style:none}
 .nav-links a{font-size:.85rem;font-weight:500;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase;position:relative;transition:color .25s}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);border-radius:2px;transition:width .25s}
 .nav-links a:hover,.nav-links a.active{color:var(--text)}
 .nav-links a.active::after{width:100%}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:1001}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:1001;flex-shrink:0}
 .hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.open span:nth-child(2){opacity:0}
@@ -270,6 +334,46 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.02
 .footer{padding:40px 0;text-align:center;border-top:1px solid var(--border);color:var(--text-dim);font-size:.85rem}
 .footer span{color:var(--accent)}
 
+/* -------- AWARDS & CERTIFICATIONS -------- */
+#awards{padding:var(--section-pad) 0}
+.awards-carousel-container{position:relative;max-width:900px;margin:0 auto}
+.awards-carousel-viewport{overflow:hidden;border-radius:var(--radius);position:relative}
+.awards-carousel-track{display:flex;transition:transform .55s cubic-bezier(.16,1,.3,1)}
+.awards-slide{min-width:100%;display:flex;flex-direction:column}
+.awards-slide-image{position:relative;width:100%;max-height:420px;overflow:hidden;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:var(--radius) var(--radius) 0 0;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.awards-slide-image img{width:100%;height:100%;object-fit:contain;padding:8px;transition:transform .4s}
+.awards-slide:hover .awards-slide-image img{transform:scale(1.03)}
+.awards-slide-image .slide-number{position:absolute;top:14px;left:14px;background:var(--accent);color:#fff;font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.05em;z-index:2}
+.awards-slide-info{background:var(--bg-card);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius) var(--radius);padding:20px 24px 24px;backdrop-filter:blur(12px)}
+.awards-slide-info h3{font-size:1.1rem;margin-bottom:6px;font-family:var(--font-display)}
+.awards-slide-info .awards-issuer{color:var(--accent-light);font-size:.85rem;font-weight:500;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.awards-slide-info .awards-desc{color:var(--text-muted);font-size:.88rem;line-height:1.7;margin-bottom:16px}
+.awards-slide-tags{display:flex;flex-wrap:wrap;gap:8px}
+.awards-tag{padding:4px 12px;border-radius:20px;font-size:.73rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.awards-tag.type-award{background:linear-gradient(135deg,rgba(250,204,21,.15),rgba(250,204,21,.05));color:#facc15;border:1px solid rgba(250,204,21,.2)}
+.awards-tag.type-cert{background:var(--accent-glow);color:var(--accent-light);border:1px solid rgba(124,58,237,.2)}
+.awards-tag.type-platform{background:rgba(255,255,255,.05);color:var(--text-muted);border:1px solid var(--border)}
+.awards-tag.type-research{background:rgba(56,189,248,.1);color:#38bdf8;border:1px solid rgba(56,189,248,.2)}
+.awards-tag.type-dev{background:rgba(52,211,153,.1);color:#34d399;border:1px solid rgba(52,211,153,.2)}
+.awards-nav-btn{position:absolute;top:50%;transform:translateY(-80%);width:46px;height:46px;border-radius:50%;background:rgba(10,10,15,.8);backdrop-filter:blur(12px);border:1px solid var(--border);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:all .25s}
+.awards-nav-btn:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 20px var(--accent-glow)}
+.awards-nav-btn.prev{left:-23px}
+.awards-nav-btn.next{right:-23px}
+.awards-nav-btn svg{width:20px;height:20px}
+.awards-dots{display:flex;justify-content:center;gap:8px;margin-top:24px}
+.awards-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid var(--border);cursor:pointer;transition:all .3s;padding:0}
+.awards-dot.active{background:var(--accent);border-color:var(--accent);box-shadow:0 0 10px var(--accent-glow-strong);transform:scale(1.2)}
+.awards-dot:hover:not(.active){background:rgba(255,255,255,.25)}
+.awards-counter{text-align:center;margin-top:14px;font-family:var(--font-mono);font-size:.8rem;color:var(--text-dim);letter-spacing:.05em}
+
+/* Awards lightbox */
+.awards-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);backdrop-filter:blur(20px);z-index:2000;display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.awards-lightbox.open{display:flex;opacity:1}
+.awards-lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:var(--radius);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.awards-lightbox-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;z-index:2001}
+.awards-lightbox-close:hover{background:var(--accent);border-color:var(--accent)}
+.awards-lightbox-close svg{width:20px;height:20px}
+
 /* -------- RESPONSIVE -------- */
 @media(max-width:1024px){
 .hero-grid{grid-template-columns:1fr;text-align:center;gap:40px}
@@ -292,12 +396,38 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.02
 .quick-facts{grid-template-columns:1fr}
 .profile-ring{width:220px;height:220px}
 .section-header h2{font-size:1.8rem}
+.awards-slide-image{max-height:320px}
+.awards-nav-btn{width:38px;height:38px;top:160px;transform:none}
+.awards-nav-btn.prev{left:8px}
+.awards-nav-btn.next{right:8px}
+.awards-slide-info{padding:16px 18px 20px}
+.awards-slide-info h3{font-size:1rem}
+.awards-slide-info .awards-issuer{font-size:.78rem}
+.awards-slide-info .awards-desc{font-size:.82rem;line-height:1.6;margin-bottom:12px}
+.awards-tag{font-size:.68rem;padding:3px 10px}
 }
 @media(max-width:480px){
 .container{padding:0 16px}
 .hero-ctas{flex-direction:column;align-items:stretch}
 .btn{justify-content:center}
 .exp-cards{grid-template-columns:1fr}
+.awards-slide-image{max-height:240px}
+.awards-slide-image img{padding:4px}
+.awards-nav-btn{width:32px;height:32px;top:120px;transform:none}
+.awards-nav-btn.prev{left:4px}
+.awards-nav-btn.next{right:4px}
+.awards-nav-btn svg{width:16px;height:16px}
+.awards-slide-info{padding:14px 14px 18px}
+.awards-slide-info h3{font-size:.92rem}
+.awards-slide-info .awards-desc{font-size:.78rem;line-height:1.55;margin-bottom:10px}
+.awards-tag{font-size:.65rem;padding:3px 8px}
+.awards-nav-btn:focus{outline:none;box-shadow:none}
+.awards-nav-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.awards-dot:focus{outline:none;box-shadow:none}
+.awards-dot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.awards-lightbox-close:focus{outline:none}
+.awards-lightbox-close:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.awards-nav-btn:active{transform:none;scale:.92}
 }
 </style>
 </head>
@@ -312,6 +442,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.02
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#experience">Experience</a></li>
+<li><a href="#awards">Awards</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#contact">Contact</a></li>
@@ -326,6 +457,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.02
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
+<a href="#awards">Awards</a>
 <a href="#projects">Projects</a>
 <a href="#services">Services</a>
 <a href="#contact">Contact</a>
@@ -642,6 +774,192 @@ Twitter / X
 </div>
 </section>
 
+<!-- ===== AWARDS & CERTIFICATIONS ===== -->
+<section id="awards">
+<div class="container">
+<div class="section-header reveal">
+<h2>Awards & Certifications <span class="badge">08</span></h2>
+<span class="accent-line"></span>
+<p class="section-subtitle">Recognitions and credentials that reflect my commitment to continuous learning and academic excellence.</p>
+</div>
+<div class="awards-carousel-container reveal reveal-delay-1">
+<div class="awards-carousel-viewport" id="awardsViewport">
+<div class="awards-carousel-track" id="awardsTrack">
+
+<!-- Slide 1 -->
+<div class="awards-slide">
+<div class="awards-slide-image" onclick="openAwardsLightbox('awards/1.png')">
+<span class="slide-number">01</span>
+<img src="awards/1.png" alt="Tech Star Summit 2025 — SIMATS Engineering" loading="lazy">
+</div>
+<div class="awards-slide-info">
+<h3>Tech Star Summit 2025 — Award Winner</h3>
+<div class="awards-issuer"><i data-lucide="building-2" style="width:14px;height:14px"></i> SIMATS Engineering — Saveetha Transdisciplinary Annual Research Summit</div>
+<p class="awards-desc">Received a trophy at the Tech Star Summit 2025 during Day 06 of the Saveetha Transdisciplinary Annual Research Summit. Recognized for outstanding performance and innovation, presented by Dr. N.M. Veeraiyan, Founder & Chancellor of SIMATS.</p>
+<div class="awards-slide-tags">
+<span class="awards-tag type-award">🏆 Trophy Winner</span>
+<span class="awards-tag type-platform">SIMATS Engineering</span>
+<span class="awards-tag type-research">Research Summit</span>
+</div>
+</div>
+</div>
+
+<!-- Slide 2 -->
+<div class="awards-slide">
+<div class="awards-slide-image" onclick="openAwardsLightbox('awards/2.png')">
+<span class="slide-number">02</span>
+<img src="awards/2.png" alt="NPTEL — Human Computer Interaction" loading="lazy">
+</div>
+<div class="awards-slide-info">
+<h3>Human Computer Interaction — Elite Certification</h3>
+<div class="awards-issuer"><i data-lucide="graduation-cap" style="width:14px;height:14px"></i> NPTEL — IIIT Delhi (Swayam)</div>
+<p class="awards-desc">Achieved Elite certification with a consolidated score of 91% (Online Assignments: 25/25, Proctored Exam: 66.25/75). A 12-week course covering usability principles, user-centered design, and interaction paradigms — completed Jan–Apr 2026.</p>
+<div class="awards-slide-tags">
+<span class="awards-tag type-cert">Elite Certificate</span>
+<span class="awards-tag type-platform">NPTEL / Swayam</span>
+<span class="awards-tag type-dev">91% Score</span>
+<span class="awards-tag type-research">4 Credits</span>
+</div>
+</div>
+</div>
+
+<!-- Slide 3 -->
+<div class="awards-slide">
+<div class="awards-slide-image" onclick="openAwardsLightbox('awards/3.png')">
+<span class="slide-number">03</span>
+<img src="awards/3.png" alt="NPTEL — Introduction to Internet of Things" loading="lazy">
+</div>
+<div class="awards-slide-info">
+<h3>Introduction to Internet of Things — Elite Certification</h3>
+<div class="awards-issuer"><i data-lucide="graduation-cap" style="width:14px;height:14px"></i> NPTEL — IIT Kharagpur (Swayam)</div>
+<p class="awards-desc">Earned Elite certification with a consolidated score of 83% (Assignments: 23.72/25, Proctored Exam: 59.69/75). This 12-week course covered IoT architecture, embedded systems, sensors, and cloud connectivity — completed Jul–Oct 2025.</p>
+<div class="awards-slide-tags">
+<span class="awards-tag type-cert">Elite Certificate</span>
+<span class="awards-tag type-platform">NPTEL / Swayam</span>
+<span class="awards-tag type-dev">83% Score</span>
+<span class="awards-tag type-research">3–4 Credits</span>
+</div>
+</div>
+</div>
+
+<!-- Slide 4 -->
+<div class="awards-slide">
+<div class="awards-slide-image" onclick="openAwardsLightbox('awards/4.png')">
+<span class="slide-number">04</span>
+<img src="awards/4.png" alt="Oracle Database SQL Certified Specialist" loading="lazy">
+</div>
+<div class="awards-slide-info">
+<h3>Oracle Database SQL — Certified Specialist</h3>
+<div class="awards-issuer"><i data-lucide="database" style="width:14px;height:14px"></i> Oracle University</div>
+<p class="awards-desc">Recognized as an Oracle Certified Specialist in Database SQL by Oracle Corporation. This industry-recognized credential validates proficiency in SQL fundamentals, data retrieval, manipulation, and database management — earned October 2024.</p>
+<div class="awards-slide-tags">
+<span class="awards-tag type-cert">Oracle Certified</span>
+<span class="awards-tag type-platform">Oracle University</span>
+<span class="awards-tag type-dev">SQL Specialist</span>
+</div>
+</div>
+</div>
+
+<!-- Slide 5 -->
+<div class="awards-slide">
+<div class="awards-slide-image" onclick="openAwardsLightbox('awards/5.png')">
+<span class="slide-number">05</span>
+<img src="awards/5.png" alt="DevTown — Netflix Clone Using HTML" loading="lazy">
+</div>
+<div class="awards-slide-info">
+<h3>Netflix Clone Using HTML — Bootcamp Certificate</h3>
+<div class="awards-issuer"><i data-lucide="code-2" style="width:14px;height:14px"></i> DevTown × Google Developer Groups (VIT-AP)</div>
+<p class="awards-desc">Completed a hands-on bootcamp building a Netflix UI clone using HTML & CSS. Hosted by DevTown in collaboration with Google Developer Groups On Campus (VIT-AP), focusing on responsive layout design and frontend fundamentals — June 2025.</p>
+<div class="awards-slide-tags">
+<span class="awards-tag type-cert">Bootcamp Certificate</span>
+<span class="awards-tag type-platform">DevTown</span>
+<span class="awards-tag type-dev">HTML / CSS</span>
+<span class="awards-tag type-platform">GDG VIT-AP</span>
+</div>
+</div>
+</div>
+
+<!-- Slide 6 -->
+<div class="awards-slide">
+<div class="awards-slide-image" onclick="openAwardsLightbox('awards/6.jpeg')">
+<span class="slide-number">06</span>
+<img src="awards/6.jpeg" alt="INTELSEC 2026 — Paper Presentation" loading="lazy">
+</div>
+<div class="awards-slide-info">
+<h3>INTELSEC 2026 — Research Paper Presentation</h3>
+<div class="awards-issuer"><i data-lucide="file-text" style="width:14px;height:14px"></i> SIMATS Engineering — Department of Intelligence Systems</div>
+<p class="awards-desc">Presented a research paper titled "Investigating the Impact of NPUs on AI Edge Application in Mobile" at the National Conference on Intelligent Next-Generation Technologies for Enhanced Learning, Secure Engineering and Computing (INTELSEC-2026) — February 2026.</p>
+<div class="awards-slide-tags">
+<span class="awards-tag type-research">Research Paper</span>
+<span class="awards-tag type-award">National Conference</span>
+<span class="awards-tag type-dev">AI / NPU / Edge Computing</span>
+</div>
+</div>
+</div>
+
+<!-- Slide 7 -->
+<div class="awards-slide">
+<div class="awards-slide-image" onclick="openAwardsLightbox('awards/7.png')">
+<span class="slide-number">07</span>
+<img src="awards/7.png" alt="Best Outgoing Student Award — IERCA" loading="lazy">
+</div>
+<div class="awards-slide-info">
+<h3>Best Outgoing Student Award</h3>
+<div class="awards-issuer"><i data-lucide="award" style="width:14px;height:14px"></i> International Educational & Research Culture Association (IERCA)</div>
+<p class="awards-desc">Honored with the Best Outgoing Student Award by IERCA (a unit of Inspire Edwersity Publications). Recognized for academic excellence and outstanding contributions in Computer Science & Engineering at SIMATS, Chennai — May 2026.</p>
+<div class="awards-slide-tags">
+<span class="awards-tag type-award">🏆 Best Outgoing Student</span>
+<span class="awards-tag type-platform">IERCA</span>
+<span class="awards-tag type-research">Academic Excellence</span>
+</div>
+</div>
+</div>
+
+<!-- Slide 8 -->
+<div class="awards-slide">
+<div class="awards-slide-image" onclick="openAwardsLightbox('awards/8.jpg')">
+<span class="slide-number">08</span>
+<img src="awards/8.jpg" alt="Best Class Student Award — Novel Research Academy" loading="lazy">
+</div>
+<div class="awards-slide-info">
+<h3>Best Class Student Award — National Student Award 2025</h3>
+<div class="awards-issuer"><i data-lucide="trophy" style="width:14px;height:14px"></i> Novel Research Academy, Puducherry</div>
+<p class="awards-desc">Received the Best Class Student Award (Certificate of Merit) at the National Student Award 2025 by Novel Research Academy (ISO 9001:2015 Certified). Honored for excellence in AI Engineering at the undergraduate level during academic year 2024–2025 — March 2025.</p>
+<div class="awards-slide-tags">
+<span class="awards-tag type-award">🏅 National Award</span>
+<span class="awards-tag type-cert">Certificate of Merit</span>
+<span class="awards-tag type-platform">Novel Research Academy</span>
+<span class="awards-tag type-dev">AI Engineering</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Navigation Arrows -->
+<button class="awards-nav-btn prev" id="awardsPrev" aria-label="Previous certificate">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<button class="awards-nav-btn next" id="awardsNext" aria-label="Next certificate">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+</div>
+
+<!-- Dots -->
+<div class="awards-dots" id="awardsDots"></div>
+<div class="awards-counter" id="awardsCounter">01 / 08</div>
+</div>
+</section>
+
+<!-- Awards Lightbox -->
+<div class="awards-lightbox" id="awardsLightbox">
+<button class="awards-lightbox-close" id="awardsLightboxClose" aria-label="Close lightbox">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+</button>
+<img id="awardsLightboxImg" src="" alt="Certificate full view">
+</div>
+
 <!-- ===== PROJECTS ===== -->
 <section id="projects">
 <div class="container">
@@ -920,6 +1238,136 @@ hero.addEventListener('mousemove', e => {
 });
 hero.addEventListener('mouseleave', () => {
   cursorGlow.style.opacity = '0';
+});
+
+// ---- Awards Carousel ----
+(function(){
+  const track = document.getElementById('awardsTrack');
+  const slides = track ? track.querySelectorAll('.awards-slide') : [];
+  const dotsContainer = document.getElementById('awardsDots');
+  const counter = document.getElementById('awardsCounter');
+  const prevBtn = document.getElementById('awardsPrev');
+  const nextBtn = document.getElementById('awardsNext');
+  if(!track || slides.length === 0) return;
+
+  let currentIndex = 0;
+  let autoplayTimer = null;
+  let isTransitioning = false;
+  let isPaused = false;
+  const totalSlides = slides.length;
+  const AUTOPLAY_DELAY = 5000;
+  const TRANSITION_DURATION = 550;
+
+  // Create dots
+  for(let i = 0; i < totalSlides; i++){
+    const dot = document.createElement('button');
+    dot.className = 'awards-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to certificate ' + (i+1));
+    dot.addEventListener('click', () => { if(!isTransitioning) { goToSlide(i); resetAutoplay(); } });
+    dotsContainer.appendChild(dot);
+  }
+  const dots = dotsContainer.querySelectorAll('.awards-dot');
+
+  function goToSlide(index){
+    if(isTransitioning) return;
+    if(index < 0) index = totalSlides - 1;
+    if(index >= totalSlides) index = 0;
+    if(index === currentIndex) return;
+    isTransitioning = true;
+    currentIndex = index;
+    track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+    dots.forEach((d,i) => d.classList.toggle('active', i === currentIndex));
+    counter.textContent = String(currentIndex + 1).padStart(2,'0') + ' / ' + String(totalSlides).padStart(2,'0');
+    setTimeout(() => { isTransitioning = false; }, TRANSITION_DURATION);
+  }
+
+  prevBtn.addEventListener('click', () => { if(!isTransitioning){ goToSlide(currentIndex - 1); resetAutoplay(); } });
+  nextBtn.addEventListener('click', () => { if(!isTransitioning){ goToSlide(currentIndex + 1); resetAutoplay(); } });
+
+  // Autoplay — always clear before setting to prevent stacking
+  function startAutoplay(){
+    stopAutoplay();
+    if(isPaused) return;
+    autoplayTimer = setInterval(() => {
+      if(!isTransitioning && !isPaused){
+        const next = (currentIndex + 1) >= totalSlides ? 0 : currentIndex + 1;
+        goToSlide(next);
+      }
+    }, AUTOPLAY_DELAY);
+  }
+  function stopAutoplay(){
+    if(autoplayTimer !== null){ clearInterval(autoplayTimer); autoplayTimer = null; }
+  }
+  function resetAutoplay(){
+    stopAutoplay();
+    // Delay restart so rapid clicks don't create short intervals
+    setTimeout(() => { if(!isPaused) startAutoplay(); }, 300);
+  }
+
+  const container = document.querySelector('.awards-carousel-container');
+  container.addEventListener('mouseenter', () => { isPaused = true; stopAutoplay(); });
+  container.addEventListener('mouseleave', () => { isPaused = false; startAutoplay(); });
+
+  // Pause when tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden){ stopAutoplay(); }
+    else if(!isPaused){ startAutoplay(); }
+  });
+
+  startAutoplay();
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if(isTransitioning) return;
+    const awardsSection = document.getElementById('awards');
+    const rect = awardsSection.getBoundingClientRect();
+    if(rect.top < window.innerHeight && rect.bottom > 0){
+      if(e.key === 'ArrowLeft'){ goToSlide(currentIndex - 1); resetAutoplay(); }
+      if(e.key === 'ArrowRight'){ goToSlide(currentIndex + 1); resetAutoplay(); }
+    }
+  });
+
+  // Touch/Swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; stopAutoplay(); }, {passive:true});
+  track.addEventListener('touchend', e => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if(Math.abs(diff) > 50 && !isTransitioning){
+      if(diff > 0) goToSlide(currentIndex + 1);
+      else goToSlide(currentIndex - 1);
+    }
+    resetAutoplay();
+  }, {passive:true});
+})();
+
+// ---- Awards Lightbox ----
+function openAwardsLightbox(src){
+  const lb = document.getElementById('awardsLightbox');
+  const img = document.getElementById('awardsLightboxImg');
+  img.src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+document.getElementById('awardsLightboxClose').addEventListener('click', () => {
+  const lb = document.getElementById('awardsLightbox');
+  lb.classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.getElementById('awardsLightbox').addEventListener('click', e => {
+  if(e.target === e.currentTarget){
+    e.currentTarget.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    const lb = document.getElementById('awardsLightbox');
+    if(lb.classList.contains('open')){
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
 });
 </script>
 </body>
